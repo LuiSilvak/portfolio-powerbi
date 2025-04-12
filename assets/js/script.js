@@ -3,6 +3,8 @@ import projetos from './projetos.js';
 // Renderiza os cards dinamicamente
 function renderCards(lista) {
   const container = document.querySelector('.card-grid');
+  if (!container) return;
+
   container.innerHTML = '';
 
   lista.forEach(projeto => {
@@ -47,27 +49,33 @@ function filtrar(nivel = 'todos', busca = '') {
   renderCards(listaFiltrada);
 }
 
-// Filtro por tab
-document.querySelectorAll('.tab').forEach(button => {
-  button.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-    const nivel = button.dataset.nivel;
-    const busca = document.getElementById('searchInput').value;
-    filtrar(nivel, busca);
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.tab');
+  const searchInput = document.getElementById('searchInput');
+  const modoBtn = document.getElementById('modoBtn');
+
+  // Filtro por tab
+  tabs.forEach(button => {
+    button.addEventListener('click', () => {
+      tabs.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      const nivel = button.dataset.nivel;
+      const busca = searchInput?.value || '';
+      filtrar(nivel, busca);
+    });
   });
-});
 
-// Pesquisa
-document.getElementById('searchInput').addEventListener('input', e => {
-  const nivel = document.querySelector('.tab.active').dataset.nivel;
-  filtrar(nivel, e.target.value);
-});
+  // Pesquisa
+  searchInput?.addEventListener('input', e => {
+    const nivel = document.querySelector('.tab.active')?.dataset.nivel || 'todos';
+    filtrar(nivel, e.target.value);
+  });
 
-// Modo claro/escuro
-document.getElementById('modoBtn').addEventListener('click', () => {
-  document.body.classList.toggle('light-mode');
-});
+  // Modo claro/escuro
+  modoBtn?.addEventListener('click', () => {
+    document.body.classList.toggle('claro');
+  });
 
-// Carregamento inicial
-filtrar('todos');
+  // Carregamento inicial
+  filtrar('todos');
+});

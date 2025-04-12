@@ -15,7 +15,7 @@ body {
 
 body.claro {
   background: #f3f3f3;
-  color: #222;
+  color: #111;
 }
 
 .container {
@@ -86,7 +86,7 @@ body.claro {
 }
 
 .tab {
-  padding: 0.4rem 1.2rem;
+  padding: 0.5rem 1rem;
   background: #2b2b2b;
   color: #fff;
   border: none;
@@ -169,6 +169,17 @@ body.claro .card {
   font-size: 1rem;
 }
 
+.card a {
+  color: violet;
+  font-size: 0.85rem;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
 /* Cores por nível */
 .card.iniciante h3 {
   color: #00e676;
@@ -179,17 +190,5 @@ body.claro .card {
 }
 
 .card.avancado h3 {
-  color: #e040fb;
-}
-
-/* Link */
-.card a {
-  color: violet;
-  font-size: 0.85rem;
-}
-
-.card img {
-  width: 100%;
-  border-radius: 5px;
-  margin-bottom: 0.5rem;
+  color: #ec407a;
 }
