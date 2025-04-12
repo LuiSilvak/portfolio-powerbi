@@ -1,3 +1,4 @@
+
 /* Reset básico */
 * {
   margin: 0;
@@ -59,7 +60,24 @@ a:hover {
   font-size: 0.95rem;
   color: #90caf9;
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.btn-cv {
+  background-color: #1976d2;
+  color: white;
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-cv:hover {
+  background-color: #1565c0;
 }
 
 .contact-info ul {
@@ -68,6 +86,7 @@ a:hover {
   color: #ccc;
   width: 100%;
   padding-left: 0;
+  margin-top: 1.5rem;
 }
 
 .contact-info li {
