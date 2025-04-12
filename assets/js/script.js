@@ -1,39 +1,35 @@
-// Filtro por Nível de Projeto (Tabs)
+// Ativa tab de filtro por nível
 document.querySelectorAll('.tab').forEach(button => {
   button.addEventListener('click', () => {
     document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
 
     const nivel = button.dataset.nivel;
-
-    document.querySelectorAll('.card').forEach(card => {
-      if (nivel === 'todos' || card.classList.contains(nivel)) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-
-    // Atualiza resultado da busca após filtro
-    document.getElementById('searchInput').dispatchEvent(new Event('input'));
+    filtrarProjetos(nivel, document.getElementById("pesquisa").value.trim().toLowerCase());
   });
 });
 
-// Barra de Pesquisa (Filtro por texto)
-document.getElementById('searchInput').addEventListener('input', function () {
-  const termo = this.value.toLowerCase();
-  const nivelAtivo = document.querySelector('.tab.active').dataset.nivel;
+// Ativa pesquisa por texto
+document.getElementById("pesquisa").addEventListener("input", () => {
+  const nivel = document.querySelector('.tab.active').dataset.nivel;
+  const termo = document.getElementById("pesquisa").value.trim().toLowerCase();
+  filtrarProjetos(nivel, termo);
+});
 
+// Função para aplicar filtro de nível + texto
+function filtrarProjetos(nivel, termo) {
   document.querySelectorAll('.card').forEach(card => {
-    const titulo = card.querySelector('h3').textContent.toLowerCase();
-    const correspondeBusca = titulo.includes(termo);
-    const correspondeNivel = nivelAtivo === 'todos' || card.classList.contains(nivelAtivo);
-
-    card.style.display = (correspondeBusca && correspondeNivel) ? 'block' : 'none';
+    const correspondeNivel = nivel === "todos" || card.classList.contains(nivel);
+    const correspondeTexto = termo === "" || card.textContent.toLowerCase().includes(termo);
+    card.style.display = (correspondeNivel && correspondeTexto) ? "block" : "none";
   });
-});
+}
 
-// Alternância de Tema Claro/Escuro
-document.getElementById('toggleTheme').addEventListener('click', () => {
-  document.body.classList.toggle('light-mode');
+// Modo Claro/Escuro
+const toggleBtn = document.getElementById("modo-toggle");
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("claro");
+  toggleBtn.innerText = document.body.classList.contains("claro")
+    ? "🌙 Modo Escuro"
+    : "☀️ Modo Claro";
 });
