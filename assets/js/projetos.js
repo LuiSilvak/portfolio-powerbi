@@ -8,7 +8,7 @@ const projetos = [
   },
   {
     titulo: "Controle de Gastos Pessoais no Power BI",
-    descricao: "Análise de gastos mensais com filtros dinâmicos.",
+    descricao: "Painel de gastos mensais com filtros dinâmicos.",
     imagem: "./assets/images/gastos-pessoais.jpg",
     link: "#",
     nivel: "iniciante"
@@ -16,14 +16,14 @@ const projetos = [
   {
     titulo: "Painel de Desempenho de Alunos no Power BI",
     descricao: "Análise por escola, série, disciplina e média geral.",
-    imagem: "./assets/images/alunos-desempenho.jpg",
+    imagem: "./assets/images/alunos.jpg",
     link: "#",
     nivel: "iniciante"
   },
   {
     titulo: "Análise de Chamados de Suporte Técnico no Power BI",
     descricao: "Acompanhamento de tickets por tipo e tempo de resposta.",
-    imagem: "./assets/images/chamados-suporte.jpg",
+    imagem: "./assets/images/suporte.jpg",
     link: "#",
     nivel: "iniciante"
   },
@@ -37,42 +37,42 @@ const projetos = [
   {
     titulo: "Análise de Produção e Desempenho de Fábrica",
     descricao: "KPIs de produtividade e eficiência por turno.",
-    imagem: "./assets/images/producao-fabrica.jpg",
+    imagem: "./assets/images/fabrica.jpg",
     link: "#",
     nivel: "intermediario"
   },
   {
     titulo: "Dashboard de Vendas e Logística de E-commerce",
     descricao: "Análise integrada de vendas e entregas.",
-    imagem: "./assets/images/ecommerce-logistica.jpg",
+    imagem: "./assets/images/ecommerce.jpg",
     link: "#",
     nivel: "intermediario"
   },
   {
     titulo: "Análise de Despesas e Orçamento Público",
     descricao: "Visão de gastos, metas e execução orçamentária.",
-    imagem: "./assets/images/orcamento-publico.jpg",
+    imagem: "./assets/images/orcamento.jpg",
     link: "#",
     nivel: "intermediario"
   },
   {
     titulo: "Painel de Indicadores de Desempenho de Funcionários",
     descricao: "Acompanhamento de metas e produtividade individual.",
-    imagem: "./assets/images/desempenho-funcionarios.jpg",
+    imagem: "./assets/images/funcionarios.jpg",
     link: "#",
     nivel: "intermediario"
   },
   {
     titulo: "Análise de Eficiência de Transportes e Logística Pública",
     descricao: "Tempo médio de entrega e custo por rota.",
-    imagem: "./assets/images/logistica-publica.jpg",
+    imagem: "./assets/images/logistica.jpg",
     link: "#",
     nivel: "intermediario"
   },
   {
     titulo: "Análise de Desempenho de Marketing Digital",
     descricao: "Indicadores de campanhas, leads e conversões.",
-    imagem: "./assets/images/marketing-digital.jpg",
+    imagem: "./assets/images/marketing.jpg",
     link: "#",
     nivel: "intermediario"
   },
@@ -100,7 +100,7 @@ const projetos = [
   {
     titulo: "Integração de Múltiplas Fontes Governamentais em Power BI",
     descricao: "Fonte cruzada com dados de portais e APIs públicas.",
-    imagem: "./assets/images/fontes-governamentais.jpg",
+    imagem: "./assets/images/governo.jpg",
     link: "#",
     nivel: "avancado"
   }
