@@ -178,3 +178,23 @@ h2 {
     padding: 1rem;
   }
 }
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Impede o scroll geral da página */
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main {
+  flex-grow: 1;
+  overflow-y: auto;   /* Scroll apenas no conteúdo */
+  padding: 2rem;
+  height: 100vh;
+}
