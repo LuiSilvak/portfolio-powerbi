@@ -124,8 +124,23 @@ body {
   color: #90caf9;
 }
 
-.card.simple h3 {
+/* Nível Iniciante - Verde */
+.card.iniciante h3 {
   color: #00e676;
+}
+
+/* Nível Intermediário - Azul */
+.card.intermediario h3 {
+  color: #29b6f6;
+}
+
+/* Nível Avançado - Roxo */
+.card.avancado h3 {
+  color: #ab47bc;
+}
+
+.card.check h3::before {
+  content: "✅ ";
 }
 
 .nivel-titulo {
@@ -152,12 +167,6 @@ body {
 .dot.blue {
   background-color: #00b0ff;
 }
-
-.card.check h3::before {
-  content: "✅ ";
-}
-
-
 
 .filtros {
   margin-bottom: 2rem;
