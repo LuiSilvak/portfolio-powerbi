@@ -13,6 +13,14 @@ body {
   min-height: 100vh;
 }
 
+a {
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
 /* SIDEBAR */
 .sidebar {
   width: 280px;
@@ -36,6 +44,7 @@ body {
   border: 4px solid #1976d2;
   object-fit: cover;
   margin-bottom: 1rem;
+  display: block;
 }
 
 .name {
@@ -77,12 +86,20 @@ body {
   text-decoration: underline;
 }
 
+.contact-info ion-icon {
+  color: #90caf9;
+  font-size: 1.2rem;
+  min-width: 20px;
+}
+
 /* MAIN CONTENT */
 .main-content {
   margin-left: 280px;
   padding: 2rem;
   flex-grow: 1;
   width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* NAVBAR */
@@ -219,4 +236,3 @@ p {
     display: none;
   }
 }
-
