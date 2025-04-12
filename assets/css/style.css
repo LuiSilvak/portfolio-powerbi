@@ -7,7 +7,7 @@ body { margin: 0; font-family: 'Poppins', sans-serif; background: url('../images
 .sidebar ul { list-style: none; padding: 0; font-size: 0.85rem; width: 100%; }
 .sidebar li { margin: 0.5rem 0; display: flex; align-items: center; gap: 8px; }
 .sidebar a { color: #90caf9; text-decoration: none; }
-.main { flex-grow: 1; background: rgba(20, 20, 20, 0.95); padding: 2rem; overflow-y: auto; }
+.main { height: 100vh; flex-grow: 1; background: rgba(20, 20, 20, 0.95); padding: 2rem; padding-right: 1rem; overflow-y: auto; }
 .tabs { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
 .tab { padding: 0.4rem 1rem; background: #2b2b2b; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
 .tab.active { background: #2196f3; color: #fff; }
