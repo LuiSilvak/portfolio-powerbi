@@ -8,102 +8,110 @@
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     body {
       font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #e3f2fd, #ffffff);
-      color: #333;
+      background-color: #121212;
+      color: #e0e0e0;
+      line-height: 1.6;
     }
     header {
-      background: linear-gradient(135deg, #1e88e5, #42a5f5);
-      color: white;
-      padding: 4rem 2rem;
+      background: #1f1f1f;
+      padding: 3rem 2rem;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      border-bottom: 2px solid #2f2f2f;
     }
     header h1 {
-      margin: 0;
-      font-size: 3rem;
+      font-size: 2.8rem;
+      color: #fff;
     }
     header p {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
+      color: #aaaaaa;
     }
     nav {
-      background: #0d47a1;
+      background: #232323;
       display: flex;
       justify-content: center;
-      gap: 2rem;
       padding: 1rem;
+      gap: 2rem;
     }
     nav a {
-      color: white;
+      color: #e0e0e0;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
     nav a:hover {
-      color: #bbdefb;
+      color: #42a5f5;
     }
     section {
       max-width: 1200px;
       margin: auto;
-      padding: 2.5rem 2rem;
+      padding: 3rem 2rem;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      color: #fdd835;
+      border-bottom: 2px solid #444;
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .projeto {
+      background: #1e1e1e;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      margin-bottom: 2.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .projeto:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    }
+    .projeto h3 {
+      color: #90caf9;
+    }
+    .projeto p {
+      margin-top: 0.5rem;
+      color: #cccccc;
     }
     iframe {
       width: 100%;
-      height: 600px;
-      border: 2px solid #ddd;
+      height: 500px;
+      border: none;
       border-radius: 8px;
-    }
-    .projeto {
-      background: white;
-      padding: 2rem;
-      margin-bottom: 3rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-    .projeto:hover {
-      transform: translateY(-5px);
-    }
-    .projeto h3 {
-      margin-top: 0;
-      color: #0d47a1;
-    }
-    footer {
-      background: #0d47a1;
-      color: white;
-      text-align: center;
-      padding: 1.5rem;
+      margin-top: 1rem;
     }
     .outros-projetos {
-      background: #e3f2fd;
+      background: #292929;
       padding: 2rem;
-      border-left: 6px solid #1e88e5;
-      border-radius: 8px;
-      margin-top: 3rem;
+      border-left: 4px solid #42a5f5;
+      border-radius: 10px;
     }
     .outros-projetos h4 {
-      margin-top: 0;
+      color: #fdd835;
+      margin-bottom: 1rem;
     }
     .outros-projetos ul {
       list-style: none;
-      padding-left: 1rem;
+      padding-left: 0;
     }
     .outros-projetos ul li::before {
-      content: '▸';
+      content: '▹';
+      color: #42a5f5;
       margin-right: 0.5rem;
-      color: #1e88e5;
     }
-    #contato a {
-      color: #1e88e5;
-      text-decoration: none;
+    footer {
+      background: #1a1a1a;
+      color: #aaa;
+      text-align: center;
+      padding: 2rem 1rem;
+      border-top: 1px solid #333;
     }
-    #contato a:hover {
-      text-decoration: underline;
+    a {
+      color: #64b5f6;
     }
   </style>
 </head>
@@ -147,7 +155,6 @@
 
     <div class="outros-projetos">
       <h4>Outros Projetos</h4>
-      <p>Confira também os demais projetos disponíveis em meu portfólio:</p>
       <ul>
         <li>Dashboard de Auditoria Pública</li>
         <li>Painel Logístico de Centro de Distribuição</li>
@@ -155,7 +162,6 @@
         <li>Análises Estratégicas para Tomada de Decisão</li>
       </ul>
     </div>
-
   </section>
 
   <section id="contato">
