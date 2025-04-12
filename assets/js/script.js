@@ -7,3 +7,21 @@ document.querySelectorAll('.tab').forEach(button => {
     document.getElementById(button.dataset.tab).classList.add('active');
   });
 });
+
+
+
+document.querySelectorAll('.filtros button').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.filtros button').forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const nivel = button.dataset.nivel;
+
+    document.querySelectorAll('.card').forEach(card => {
+      if (nivel === 'todos' || card.classList.contains(nivel)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
