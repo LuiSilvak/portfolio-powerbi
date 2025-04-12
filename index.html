@@ -1,105 +1,71 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luís Silva - Portfólio Power BI</title>
-
-  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luís Silva - Power BI Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-  <main>
+  <div class="container">
     <aside class="sidebar">
-      <div class="profile-box">
-        <img src="./assets/images/luis.png" alt="Luís Silva" class="avatar" />
-        <h1 class="name">Luís Silva</h1>
-        <p class="role">Analista de Dados Power BI</p>
-        <a class="btn-cv" href="./curriculo-luis-silva.pdf" download>
-          <ion-icon name="document-outline"></ion-icon> Currículo
-        </a>
-      </div>
-
-      <div class="contact-info">
-        <ul>
-          <li><ion-icon name="mail-outline"></ion-icon> <a href="mailto:luisilvaoliveira4@gmail.com">luisilvaoliveira4@gmail.com</a></li>
-          <li><ion-icon name="location-outline"></ion-icon> São Luís - MA</li>
-          <li><ion-icon name="logo-linkedin"></ion-icon> <a href="https://www.linkedin.com/in/luissilvak/" target="_blank">LinkedIn</a></li>
-          <li><ion-icon name="logo-github"></ion-icon> <a href="https://github.com/LuiSilvak" target="_blank">GitHub</a></li>
-        </ul>
-      </div>
+      <img src="./assets/images/luis.png" alt="Luís Silva">
+      <h1>Luís Silva</h1>
+      <p>Analista de Dados Power BI</p>
+      <ul>
+        <li><ion-icon name="mail-outline"></ion-icon> <a href="mailto:luisilvaoliveira4@gmail.com">Email</a></li>
+        <li><ion-icon name="location-outline"></ion-icon> São Luís - MA</li>
+        <li><ion-icon name="logo-linkedin"></ion-icon> <a href="https://linkedin.com/in/luissilvak">LinkedIn</a></li>
+        <li><ion-icon name="document-outline"></ion-icon> <a href="./curriculo-luis-silva.pdf" download>Currículo</a></li>
+      </ul>
     </aside>
 
-    <div class="main-content">
-      <nav class="navbar">
-        <button class="nav-btn active" data-page="sobre">Sobre</button>
-        <button class="nav-btn" data-page="experiencia">Experiência</button>
-        <button class="nav-btn" data-page="projetos">Projetos</button>
-        <button class="nav-btn" data-page="contato">Contato</button>
-      </nav>
+    <main class="main">
+      <div class="tabs">
+        <button class="tab active" data-tab="sobre">Sobre</button>
+        <button class="tab" data-tab="projetos">Projetos</button>
+        <button class="tab" data-tab="contato">Contato</button>
+      </div>
 
-      <section class="content active" id="sobre">
+      <section id="sobre" class="section active">
         <h2>Sobre Mim</h2>
-        <p>Sou um profissional multidisciplinar, com experiência sólida em Análise de Dados, Desenvolvimento de Software, DevOps e Tecnologias Educacionais.</p>
-        <ul>
-          <li><strong>Dados & Automação:</strong> Python, Power BI (Power Query, DAX), SQL, automação de fluxos de trabalho.</li>
-          <li><strong>EAD & WordPress:</strong> Moodle, cursos com IA, customização com H5P, Elementor, SEO e performance.</li>
-          <li><strong>Dev & Infra:</strong> PHP/Laravel, CI/CD, testes automatizados, servidores em nuvem.</li>
-        </ul>
-        <p>💡 Apaixonado por tecnologia, inovação e soluções que geram impacto real.</p>
-      </section>
-
-      <section class="content" id="experiencia">
-        <h2>Experiência Profissional</h2>
-        <ul class="timeline">
-          <li>
-            <h3>PD Case Informática Ltda</h3>
-            <p>Programador Júnior (Jul/2022 – Atual)</p>
-          </li>
-          <li>
-            <h3>Tribunal de Contas do Estado do Maranhão</h3>
-            <p>Estagiário Técnico de TI (Set/2021 – Ago/2022)</p>
-          </li>
-          <li>
-            <h3>Freelancer</h3>
-            <p>Técnico de TI (Nov/2012 – Ago/2021)</p>
-          </li>
-        </ul>
-      </section>
-
-      <section class="content" id="projetos">
-        <h2>Projetos Power BI</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <h4>Indicadores Educacionais</h4>
-            <iframe src="URL_DO_PBI_1" allowfullscreen></iframe>
+        <p>Sou um profissional com experiência sólida em Análise de Dados, especializado em criação de dashboards, indicadores de desempenho e automações em Power BI.</p>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Power BI Corporativo</h3>
+            <p>Dashboards com indicadores comerciais, financeiros e operacionais.</p>
           </div>
-          <div class="project-card">
-            <h4>Gestão Hospitalar</h4>
-            <iframe src="URL_DO_PBI_2" allowfullscreen></iframe>
+          <div class="card">
+            <h3>Indicadores Públicos</h3>
+            <p>Análises de dados educacionais, hospitalares e governamentais.</p>
           </div>
-          <div class="project-card">
-            <h4>Desempenho Comercial</h4>
-            <iframe src="URL_DO_PBI_3" allowfullscreen></iframe>
+          <div class="card">
+            <h3>Automação com Power Query</h3>
+            <p>Integração de dados e ETL inteligente para relatórios dinâmicos.</p>
+          </div>
+          <div class="card">
+            <h3>DAX Avançado</h3>
+            <p>Modelagem de métricas e análises temporais robustas.</p>
           </div>
         </div>
       </section>
 
-      <section class="content" id="contato">
-        <h2>Contato</h2>
-        <p>Quer conversar sobre projetos, oportunidades ou colaborações? Estou à disposição!</p>
-        <ul>
-          <li>Email: <a href="mailto:luisilvaoliveira4@gmail.com">luisilvaoliveira4@gmail.com</a></li>
-          <li>LinkedIn: <a href="https://www.linkedin.com/in/luissilvak/">/luissilvak</a></li>
-          <li>GitHub: <a href="https://github.com/LuiSilvak">LuiSilvak</a></li>
-        </ul>
+      <section id="projetos" class="section">
+        <h2>Projetos Power BI</h2>
+        <p>Em breve, links e demonstrações de painéis publicados.</p>
       </section>
-    </div>
-  </main>
+
+      <section id="contato" class="section">
+        <h2>Contato</h2>
+        <p>Email: luisilvaoliveira4@gmail.com</p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/luissilvak" target="_blank">/luissilvak</a></p>
+      </section>
+    </main>
+  </div>
+
   <script src="./assets/js/script.js"></script>
 </body>
 </html>
