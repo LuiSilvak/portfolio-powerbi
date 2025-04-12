@@ -67,7 +67,6 @@ body {
 
 .main {
   flex-grow: 1;
-  background: rgba(20, 20, 20, 0.95);
   padding: 2rem;
   padding-right: 1rem;
   overflow-y: auto;
