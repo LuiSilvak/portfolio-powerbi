@@ -3,24 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio Power BI - Seu Nome</title>
+  <title>Portfólio Power BI - Luís Silva</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+      background: linear-gradient(to bottom, #e3f2fd, #ffffff);
       color: #333;
     }
     header {
-      background-color: #1a73e8;
+      background: linear-gradient(90deg, #1e88e5, #42a5f5);
       color: white;
-      padding: 2rem;
+      padding: 3rem 2rem;
       text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
     }
     nav {
-      background: #333;
+      background: #263238;
       color: white;
       display: flex;
       justify-content: center;
@@ -33,7 +38,7 @@
       font-weight: bold;
     }
     section {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
       padding: 2rem;
     }
@@ -44,23 +49,47 @@
     }
     .projeto {
       background: white;
-      padding: 1rem;
-      margin-bottom: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .projeto h3 {
+      margin-top: 0;
+      color: #1a237e;
     }
     footer {
-      background: #333;
+      background: #263238;
       color: white;
       text-align: center;
       padding: 1rem;
+      margin-top: 4rem;
+    }
+    .outros-projetos {
+      background: #f0f4f8;
+      padding: 2rem;
+      border-left: 5px solid #42a5f5;
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+    .outros-projetos h4 {
+      margin-top: 0;
+    }
+    .outros-projetos ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+    .outros-projetos ul li::before {
+      content: '➡';
+      margin-right: 0.5rem;
+      color: #1e88e5;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Portfólio Power BI</h1>
-    <p>Desenvolvido por Seu Nome</p>
+    <p>Desenvolvido por Luís Silva</p>
   </header>
 
   <nav>
@@ -75,7 +104,7 @@
   </section>
 
   <section id="projetos">
-    <h2>Projetos</h2>
+    <h2>Projetos em Destaque</h2>
 
     <div class="projeto">
       <h3>Indicadores Educacionais</h3>
@@ -95,18 +124,27 @@
       <iframe src="URL_DO_RELATORIO_PUBLICADO" allowfullscreen></iframe>
     </div>
 
-    <!-- Adicione mais projetos conforme necessário -->
+    <div class="outros-projetos">
+      <h4>Outros Projetos</h4>
+      <p>Confira também os demais projetos disponíveis em meu portfólio:</p>
+      <ul>
+        <li>Dashboard de Auditoria Pública</li>
+        <li>Painel Logístico de Centro de Distribuição</li>
+        <li>Painel de Recursos Humanos</li>
+        <li>Análises Estratégicas para Tomada de Decisão</li>
+      </ul>
+    </div>
 
   </section>
 
   <section id="contato">
     <h2>Contato</h2>
     <p>Email: seuemail@dominio.com</p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/seuperfil" target="_blank">seuperfil</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/luissilvak/" target="_blank">luissilvak</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 - Desenvolvido por Seu Nome</p>
+    <p>&copy; 2025 - Desenvolvido por Luís Silva</p>
   </footer>
 </body>
 </html>
