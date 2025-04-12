@@ -21,3 +21,32 @@ body { margin: 0; font-family: 'Poppins', sans-serif; background: url('../images
 .nivel { margin: 2rem 0 1rem; }
 .nivel.iniciante { color: #00e676; }
 .nivel.intermediario { color: #29b6f6; }
+.nivel-titulo {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.green {
+  background-color: #00e676;
+}
+
+.dot.blue {
+  background-color: #00b0ff;
+}
+
+.card.check h3::before {
+  content: "✅ ";
+}
+
