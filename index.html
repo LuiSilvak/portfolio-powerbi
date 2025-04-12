@@ -1,88 +1,140 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Luís Silva - Power BI Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
-<link href="./assets/css/style.css" rel="stylesheet"/>
-<script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" type="module"></script>
-<script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luís Silva - Power BI Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-<div class="container">
-<aside class="sidebar">
-<img alt="Luís Silva" src="./assets/images/luis.png"/>
-<h1>Luís Silva</h1>
-<p>Analista de Dados Power BI</p>
-<ul>
-<li><ion-icon name="mail-outline"></ion-icon><a href="mailto:luisilvaoliveira4@gmail.com">Email</a></li>
-<li><ion-icon name="location-outline"></ion-icon>São Luís - MA</li>
-<li><ion-icon name="logo-linkedin"></ion-icon><a href="https://linkedin.com/in/luissilvak" target="_blank">LinkedIn</a></li>
-<li><ion-icon name="logo-github"></ion-icon><a href="https://github.com/LuiSilvak" target="_blank">Repositórios</a></li>
-</ul>
-</aside>
-<main class="main">
-<div class="tabs">
-<button class="tab active" data-tab="sobre">Sobre</button>
-<button class="tab" data-tab="projetos">Projetos</button>
-<button class="tab" data-tab="contato">Contato</button>
-</div>
-<section class="section active" id="sobre">
-<h2>Sobre Mim</h2>
-<p>Sou um profissional com experiência sólida em Análise de Dados, especializado em criação de dashboards, indicadores de desempenho e automações em Power BI.</p>
-<div class="card-grid">
-<div class="card"><h3>Power BI Corporativo</h3><p>Dashboards com indicadores comerciais, financeiros e operacionais.</p></div>
-<div class="card"><h3>Indicadores Públicos</h3><p>Análises de dados educacionais, hospitalares e governamentais.</p></div>
-<div class="card"><h3>Automação com Power Query</h3><p>Integração de dados e ETL inteligente para relatórios dinâmicos.</p></div>
-<div class="card"><h3>DAX Avançado</h3><p>Modelagem de métricas e análises temporais robustas.</p></div>
-</div>
-</section>
-<section class="section" id="projetos">
+  <div class="container">
+    <aside class="sidebar">
+      <img src="./assets/images/luis.png" alt="Luís Silva" />
+      <h1>Luís Silva</h1>
+      <p>Analista de Dados Power BI</p>
+      <ul>
+        <li>
+          <ion-icon name="mail-outline"></ion-icon>
+          <a href="mailto:luisilvaoliveira4@gmail.com">Email</a>
+        </li>
+        <li>
+          <ion-icon name="location-outline"></ion-icon>
+          São Luís - MA
+        </li>
+        <li>
+          <ion-icon name="logo-linkedin"></ion-icon>
+          <a href="https://linkedin.com/in/luissilvak" target="_blank">LinkedIn</a>
+        </li>
+        <li>
+          <ion-icon name="logo-github"></ion-icon>
+          <a href="https://github.com/LuiSilvak" target="_blank">Repositórios</a>
+        </li>
+      </ul>
+    </aside>
 
-<div class="filtros">
-<button class="active" data-nivel="todos">Todos</button>
-<button data-nivel="iniciante">Iniciante</button>
-<button data-nivel="intermediario">Intermediário</button>
-<button data-nivel="avancado">Avançado</button>
-</div>
-<h2>Projetos Power BI</h2>
-<p>Confira abaixo os projetos organizados por nível de complexidade:</p>
-<div class="nivel-titulo"><span class="dot green"></span><span><strong>Nível Iniciante</strong></span></div>
-<div class="card-grid">
-<div class="card check simple"><h3>Dashboard de Vendas Simples no Power BI</h3><a href="#">Ver Projeto</a></div>
-<div class="card check simple"><h3>Controle de Gastos Pessoais no Power BI</h3><a href="#">Ver Projeto</a></div>
-<div class="card check simple"><h3>Painel de Desempenho de Alunos no Power BI</h3><a href="#">Ver Projeto</a></div>
-<div class="card check simple"><h3>Análise de Chamados de Suporte Técnico no Power BI</h3><a href="#">Ver Projeto</a></div>
-<div class="card check simple"><h3>Acompanhamento de Treinamentos no Power BI</h3><a href="#">Ver Projeto</a></div>
-</div>
-<div class="nivel-titulo"><span class="dot blue"></span><span><strong>Nível Intermediário / Robusto</strong></span></div>
-<div class="card-grid">
-<div class="card"><h3>Análise de Produção e Desempenho de Fábrica</h3><a href="#">Ver Projeto</a></div>
-<div class="card"><h3>Dashboard de Vendas e Logística de E-commerce</h3><a href="#">Ver Projeto</a></div>
-<div class="card"><h3>Análise de Despesas e Orçamento Público</h3><a href="#">Ver Projeto</a></div>
-<div class="card"><h3>Painel de Indicadores de Desempenho de Funcionários</h3><a href="#">Ver Projeto</a></div>
-<div class="card"><h3>Análise de Eficiência de Transportes e Logística Pública</h3><a href="#">Ver Projeto</a></div>
-<div class="card"><h3>Análise de Desempenho de Marketing Digital</h3><a href="#">Ver Projeto</a></div>
-<div class="card"><h3>Monitoramento de Consumo de Energia em Fábrica</h3><a href="#">Ver Projeto</a></div>
-<div class="card"><h3>Análise de Feedback de Clientes em Serviços Públicos</h3><a href="#">Ver Projeto</a></div>
-<div class="card"><h3>Painel de Inventário de Armazém e Gestão de Estoques</h3><a href="#">Ver Projeto</a></div>
-<div class="card"><h3>Análise de Produção e Qualidade em Indústria Automotiva</h3><a href="#">Ver Projeto</a></div>
-<div class="card"><h3>Análise de Gestão de Saúde Pública</h3><a href="#">Ver Projeto</a></div>
-<div class="card"><h3>Gestão de Transporte Público</h3><a href="#">Ver Projeto</a></div>
-<div class="card"><h3>Análise de Sustentabilidade em Empresas</h3><a href="#">Ver Projeto</a></div>
-<div class="card"><h3>Análise de Indicadores de Atendimento em Call Centers</h3><a href="#">Ver Projeto</a></div>
-<div class="card"><h3>Análise de Despesas e Receita de Empresa</h3><a href="#">Ver Projeto</a></div>
-</div>
-</section>
-<section class="section" id="contato">
-<h2>Contato</h2>
-<p>Email: luisilvaoliveira4@gmail.com</p>
-<p>LinkedIn: <a href="https://linkedin.com/in/luissilvak" target="_blank">/luissilvak</a></p>
-</section>
-</main>
-</div>
-<script src="./assets/js/script.js"></script>
+    <main class="main">
+      <div class="tabs">
+        <button class="tab active" data-nivel="todos">Todos</button>
+        <button class="tab" data-nivel="iniciante">Iniciante</button>
+        <button class="tab" data-nivel="intermediario">Intermediário</button>
+        <button class="tab" data-nivel="avancado">Avançado</button>
+      </div>
+
+      <section id="projetos">
+        <h2>Projetos Power BI</h2>
+        <p>Confira abaixo os projetos organizados por nível de complexidade:</p>
+
+        <div class="card-grid">
+          <!-- Nível Iniciante -->
+          <div class="card check simple iniciante">
+            <h3>Dashboard de Vendas Simples no Power BI</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check simple iniciante">
+            <h3>Controle de Gastos Pessoais no Power BI</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check simple iniciante">
+            <h3>Painel de Desempenho de Alunos no Power BI</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check simple iniciante">
+            <h3>Análise de Chamados de Suporte Técnico no Power BI</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check simple iniciante">
+            <h3>Acompanhamento de Treinamentos no Power BI</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+
+          <!-- Nível Intermediário -->
+          <div class="card check intermediario">
+            <h3>Análise de Produção e Desempenho de Fábrica</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check intermediario">
+            <h3>Dashboard de Vendas e Logística de E-commerce</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check intermediario">
+            <h3>Análise de Despesas e Orçamento Público</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check intermediario">
+            <h3>Painel de Indicadores de Desempenho de Funcionários</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check intermediario">
+            <h3>Análise de Eficiência de Transportes e Logística Pública</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check intermediario">
+            <h3>Análise de Desempenho de Marketing Digital</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check intermediario">
+            <h3>Monitoramento de Consumo de Energia em Fábrica</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check intermediario">
+            <h3>Análise de Feedback de Clientes em Serviços Públicos</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check intermediario">
+            <h3>Painel de Inventário de Armazém e Gestão de Estoques</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check intermediario">
+            <h3>Análise de Produção e Qualidade em Indústria Automotiva</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check intermediario">
+            <h3>Análise de Gestão de Saúde Pública</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check intermediario">
+            <h3>Gestão de Transporte Público</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check intermediario">
+            <h3>Análise de Sustentabilidade em Empresas</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check intermediario">
+            <h3>Análise de Indicadores de Atendimento em Call Centers</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+          <div class="card check intermediario">
+            <h3>Análise de Despesas e Receita de Empresa</h3>
+            <a href="#">Ver Projeto</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
