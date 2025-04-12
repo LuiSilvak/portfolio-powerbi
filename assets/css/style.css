@@ -20,6 +20,7 @@ html {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+  min-height: calc(100vh - 6rem);
 }
 
 /* === SIDEBAR === */
@@ -81,6 +82,7 @@ html {
   flex-grow: 1;
   padding: 2rem 3rem;
   background-color: #1e1e1e;
+  padding-bottom: 4rem;
 }
 
 /* === ABAS === */
