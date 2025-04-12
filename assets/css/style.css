@@ -1,20 +1,28 @@
+/* === GERAL === */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom right, #1e88e5, #90caf9);
+  background: url('../images/blue_background.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: #fff;
+}
+
+html {
+  height: 100%;
 }
 
 .container {
   display: flex;
   max-width: 1200px;
   margin: 3rem auto;
-  background-color: #1a1a1a;
+  background-color: rgba(18, 18, 18, 0.95); /* fundo escuro semi-transparente */
+  backdrop-filter: blur(6px);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 0 40px rgba(0,0,0,0.3);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
 }
 
+/* === SIDEBAR === */
 .sidebar {
   width: 280px;
   background-color: #121212;
@@ -64,12 +72,18 @@ body {
   text-decoration: none;
 }
 
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* === MAIN === */
 .main {
   flex-grow: 1;
   padding: 2rem 3rem;
   background-color: #1e1e1e;
 }
 
+/* === ABAS === */
 .tabs {
   display: flex;
   gap: 1rem;
@@ -97,6 +111,7 @@ body {
   border-color: #2196f3;
 }
 
+/* === SEÇÕES === */
 .section {
   display: none;
 }
@@ -111,6 +126,7 @@ h2 {
   color: white;
 }
 
+/* === CARDS === */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -122,12 +138,13 @@ h2 {
   border-radius: 10px;
   padding: 1.2rem;
   color: #e0e0e0;
-  box-shadow: 0 0 12px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .card h3 {
@@ -139,7 +156,22 @@ h2 {
   font-size: 0.9rem;
 }
 
-html {
-  background: linear-gradient(to bottom right, #1e88e5, #90caf9);
-}
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    margin: 1rem;
+  }
 
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .main {
+    padding: 1rem;
+  }
+}
