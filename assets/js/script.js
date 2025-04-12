@@ -1,35 +1,73 @@
-// Ativa tab de filtro por nível
+import projetos from './projetos.js';
+
+// Renderiza os cards dinamicamente
+function renderCards(lista) {
+  const container = document.querySelector('.card-grid');
+  container.innerHTML = '';
+
+  lista.forEach(projeto => {
+    const card = document.createElement('div');
+    card.className = `card check ${projeto.nivel}`;
+
+    const titulo = document.createElement('h3');
+    titulo.textContent = projeto.titulo;
+
+    const descricao = document.createElement('p');
+    descricao.textContent = projeto.descricao;
+
+    const link = document.createElement('a');
+    link.href = projeto.link;
+    link.target = '_blank';
+    link.textContent = 'Ver Projeto';
+
+    // miniatura
+    if (projeto.imagem) {
+      const img = document.createElement('img');
+      img.src = projeto.imagem;
+      img.alt = '';
+      img.className = 'miniatura';
+      card.appendChild(img);
+    }
+
+    card.appendChild(titulo);
+    card.appendChild(descricao);
+    card.appendChild(link);
+
+    container.appendChild(card);
+  });
+}
+
+function filtrar(nivel = 'todos', busca = '') {
+  const listaFiltrada = projetos.filter(projeto => {
+    const porNivel = nivel === 'todos' || projeto.nivel === nivel;
+    const porBusca = projeto.titulo.toLowerCase().includes(busca.toLowerCase());
+    return porNivel && porBusca;
+  });
+
+  renderCards(listaFiltrada);
+}
+
+// Filtro por tab
 document.querySelectorAll('.tab').forEach(button => {
   button.addEventListener('click', () => {
     document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
-
     const nivel = button.dataset.nivel;
-    filtrarProjetos(nivel, document.getElementById("pesquisa").value.trim().toLowerCase());
+    const busca = document.getElementById('searchInput').value;
+    filtrar(nivel, busca);
   });
 });
 
-// Ativa pesquisa por texto
-document.getElementById("pesquisa").addEventListener("input", () => {
+// Pesquisa
+document.getElementById('searchInput').addEventListener('input', e => {
   const nivel = document.querySelector('.tab.active').dataset.nivel;
-  const termo = document.getElementById("pesquisa").value.trim().toLowerCase();
-  filtrarProjetos(nivel, termo);
+  filtrar(nivel, e.target.value);
 });
 
-// Função para aplicar filtro de nível + texto
-function filtrarProjetos(nivel, termo) {
-  document.querySelectorAll('.card').forEach(card => {
-    const correspondeNivel = nivel === "todos" || card.classList.contains(nivel);
-    const correspondeTexto = termo === "" || card.textContent.toLowerCase().includes(termo);
-    card.style.display = (correspondeNivel && correspondeTexto) ? "block" : "none";
-  });
-}
-
-// Modo Claro/Escuro
-const toggleBtn = document.getElementById("modo-toggle");
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("claro");
-  toggleBtn.innerText = document.body.classList.contains("claro")
-    ? "🌙 Modo Escuro"
-    : "☀️ Modo Claro";
+// Modo claro/escuro
+document.getElementById('modoBtn').addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
 });
+
+// Carregamento inicial
+filtrar('todos');

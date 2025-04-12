@@ -106,21 +106,4 @@ const projetos = [
   }
 ];
 
-function carregarProjetos() {
-  const container = document.getElementById("grid-projetos");
-  container.innerHTML = "";
-
-  projetos.forEach(projeto => {
-    const card = document.createElement("div");
-    card.className = `card check ${projeto.nivel}`;
-    card.innerHTML = `
-      <img src="${projeto.imagem}" alt="Miniatura do projeto" onerror="this.style.display='none'" />
-      <h3>${projeto.titulo}</h3>
-      <p>${projeto.descricao}</p>
-      <a href="${projeto.link}" target="_blank">Ver Projeto</a>
-    `;
-    container.appendChild(card);
-  });
-}
-
-document.addEventListener("DOMContentLoaded", carregarProjetos);
+export default projetos;

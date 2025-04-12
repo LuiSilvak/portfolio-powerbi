@@ -108,33 +108,33 @@ body.claro {
   color: #fff;
 }
 
-#modo-toggle {
+#modoBtn {
   background-color: #2b2b2b;
   border: none;
   color: white;
   padding: 6px 12px;
   border-radius: 5px;
   cursor: pointer;
-  margin-bottom: 10px;
   font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 
-#modo-toggle:hover {
+#modoBtn:hover {
   background-color: #3c3c3c;
 }
 
-#pesquisa {
+#searchInput {
   width: 100%;
   max-width: 400px;
   padding: 8px 12px;
   border-radius: 5px;
   border: none;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 0.95rem;
   outline: none;
 }
 
-body.claro #pesquisa {
+body.claro #searchInput {
   background: #fff;
   color: #000;
 }
@@ -142,7 +142,7 @@ body.claro #pesquisa {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .card {
@@ -192,9 +192,4 @@ body.claro .card {
   width: 100%;
   border-radius: 5px;
   margin-bottom: 0.5rem;
-}
-
-/* Remoção do texto 'Miniatura' */
-.card img::after {
-  content: none;
 }

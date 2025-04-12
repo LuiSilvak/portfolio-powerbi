@@ -24,75 +24,27 @@
     </aside>
 
     <main class="main">
-      <div class="top-bar">
-        <div class="tabs">
-          <button class="tab active" data-nivel="todos"><ion-icon name="grid-outline"></ion-icon> Todos</button>
-          <button class="tab" data-nivel="iniciante"><ion-icon name="bar-chart-outline"></ion-icon> Iniciante</button>
-          <button class="tab" data-nivel="intermediario"><ion-icon name="stats-chart-outline"></ion-icon> Intermediário</button>
-          <button class="tab" data-nivel="avancado"><ion-icon name="rocket-outline"></ion-icon> Avançado</button>
-        </div>
-        <button id="toggleTheme"><ion-icon name="contrast-outline"></ion-icon> Modo Claro/Escuro</button>
+      <div class="tabs">
+        <button class="tab active" data-nivel="todos">🔷 Todos</button>
+        <button class="tab" data-nivel="iniciante">✅ Iniciante</button>
+        <button class="tab" data-nivel="intermediario">📊 Intermediário</button>
+        <button class="tab" data-nivel="avancado">🧠 Avançado</button>
       </div>
 
-      <input type="text" id="searchInput" placeholder="Pesquisar projeto..." />
+      <button id="modoBtn">🌙 Modo Claro/Escuro</button>
+      <input type="text" id="searchInput" placeholder="🔍 Pesquisar projeto..." />
 
       <section id="projetos">
         <h2>Projetos Power BI</h2>
         <p>Confira abaixo os projetos organizados por nível de complexidade:</p>
-
-        <div class="card-grid">
-          <!-- Nível Iniciante -->
-          <div class="card check simple iniciante">
-            <img src="./assets/images/miniaturas/vendas-simples.png" class="miniatura" alt="Miniatura" />
-            <h3>Dashboard de Vendas Simples no Power BI</h3>
-            <p class="descricao">Indicadores básicos de vendas segmentados por período.</p>
-            <a href="#">Ver Projeto</a>
-          </div>
-          <div class="card check simple iniciante">
-            <img src="./assets/images/miniaturas/gastos.png" class="miniatura" alt="Miniatura" />
-            <h3>Controle de Gastos Pessoais no Power BI</h3>
-            <p class="descricao">Painel de gastos mensais com filtros dinâmicos.</p>
-            <a href="#">Ver Projeto</a>
-          </div>
-          <div class="card check simple iniciante">
-            <h3>Painel de Desempenho de Alunos no Power BI</h3>
-            <p class="descricao">Análise por escola, série, disciplina e média geral.</p>
-            <a href="#">Ver Projeto</a>
-          </div>
-          <div class="card check simple iniciante">
-            <h3>Análise de Chamados de Suporte Técnico no Power BI</h3>
-            <p class="descricao">Acompanhamento de tickets por tipo e tempo de resposta.</p>
-            <a href="#">Ver Projeto</a>
-          </div>
-          <div class="card check simple iniciante">
-            <h3>Acompanhamento de Treinamentos no Power BI</h3>
-            <p class="descricao">Indicadores de presença, nota e status de conclusão.</p>
-            <a href="#">Ver Projeto</a>
-          </div>
-
-          <!-- Intermediários (exemplos) -->
-          <div class="card check intermediario">
-            <h3>Análise de Produção e Desempenho de Fábrica</h3>
-            <p class="descricao">KPIs de produtividade e eficiência por turno.</p>
-            <a href="#">Ver Projeto</a>
-          </div>
-          <div class="card check intermediario">
-            <h3>Dashboard de Vendas e Logística de E-commerce</h3>
-            <p class="descricao">Análise integrada de vendas e entregas.</p>
-            <a href="#">Ver Projeto</a>
-          </div>
-          <div class="card check avancado">
-            <h3>Integração de Múltiplas Fontes Governamentais em Power BI</h3>
-            <p class="descricao">Fonte cruzada com dados de portais e APIs públicas.</p>
-            <a href="#">Ver Projeto</a>
-          </div>
-          <!-- Adicione os demais cards aqui com classe: iniciante / intermediario / avancado -->
+        <div class="card-grid" id="grid-projetos">
+          <!-- Projetos gerados dinamicamente -->
         </div>
       </section>
     </main>
   </div>
-  
-  <script src="./assets/js/projetos.js"></script>
-  <script src="./assets/js/script.js"></script>
+
+  <script type="module" src="./assets/js/projetos.js"></script>
+  <script type="module" src="./assets/js/script.js"></script>
 </body>
 </html>
