@@ -1,17 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const tabs = document.querySelectorAll(".tab");
-  const sections = document.querySelectorAll(".section");
+document.querySelectorAll('.tab').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
 
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      // Remove todas as abas e seções ativas
-      tabs.forEach(t => t.classList.remove("active"));
-      sections.forEach(s => s.classList.remove("active"));
-
-      // Ativa a aba clicada e mostra a seção correspondente
-      tab.classList.add("active");
-      const selected = tab.getAttribute("data-tab");
-      document.getElementById(selected).classList.add("active");
-    });
+    button.classList.add('active');
+    document.getElementById(button.dataset.tab).classList.add('active');
   });
 });
