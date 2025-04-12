@@ -1,20 +1,16 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-  const buttons = document.querySelectorAll(".nav-btn");
-  const sections = document.querySelectorAll(".content");
+  const tabs = document.querySelectorAll(".tab");
+  const sections = document.querySelectorAll(".section");
 
-  buttons.forEach(button => {
-    button.addEventListener("click", () => {
-      buttons.forEach(btn => btn.classList.remove("active"));
-      sections.forEach(sec => sec.classList.remove("active"));
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      // Remove classe ativa de todos os botões e seções
+      tabs.forEach(t => t.classList.remove("active"));
+      sections.forEach(s => s.classList.remove("active"));
 
-      button.classList.add("active");
-
-      const page = button.getAttribute("data-page");
-      const targetSection = document.getElementById(page);
-      if (targetSection) {
-        targetSection.classList.add("active");
-      }
+      // Ativa o botão clicado e mostra a seção correspondente
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.tab).classList.add("active");
     });
   });
 });
