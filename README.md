@@ -61,7 +61,7 @@ portfolio-powerbi/
 | Avançado   | Indicadores Estratégicos Corporativos e Indústria 4.0     |
 
 > Acesse o projeto no GitHub Pages (se estiver hospedado):  
-> 🌐 **[Visualizar Portfólio](https://seu-usuario.github.io/portfolio-powerbi/)**
+> 🌐 **[Visualizar Portfólio](https://luisilvak.github.io/portfolio-powerbi/)**
 
 ## 🔓 Licença
 
