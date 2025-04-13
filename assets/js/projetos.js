@@ -4,7 +4,8 @@ const projetos = [
     descricao: "Indicadores básicos de vendas segmentados por período.",
     imagem: "./assets/images/vendas-simples.jpg",
     link: "#",
-    nivel: "iniciante"
+    nivel: "iniciante",
+    destaque: true
   },
   {
     titulo: "Controle de Gastos Pessoais no Power BI",
@@ -39,7 +40,8 @@ const projetos = [
     descricao: "KPIs de produtividade e eficiência por turno.",
     imagem: "./assets/images/fabrica.jpg",
     link: "#",
-    nivel: "intermediario"
+    nivel: "intermediario",
+    destaque: true
   },
   {
     titulo: "Dashboard de Vendas e Logística de E-commerce",
@@ -88,14 +90,16 @@ const projetos = [
     descricao: "Indicadores ambientais e metas de ESG.",
     imagem: "./assets/images/sustentabilidade.jpg",
     link: "#",
-    nivel: "intermediario"
+    nivel: "intermediario",
+    destaque: true
   },
   {
     titulo: "Análise de Indicadores Estratégicos Corporativos",
     descricao: "Métricas consolidadas de alta gestão e painéis executivos.",
     imagem: "./assets/images/estrategico.jpg",
     link: "#",
-    nivel: "avancado"
+    nivel: "avancado",
+    destaque: true
   },
   {
     titulo: "Integração de Múltiplas Fontes Governamentais em Power BI",
@@ -108,7 +112,8 @@ const projetos = [
     titulo: "Análise e Previsão de Demanda de Produtos",
     descricao: "Previsão de demanda com séries temporais para estoque e logística.",
     link: "#",
-    nivel: "avancado"
+    nivel: "avancado",
+    destaque: true
   },
   {
     titulo: "Análise de Riscos e Oportunidades em Investimentos",

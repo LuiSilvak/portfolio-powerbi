@@ -1,15 +1,24 @@
 import projetos from './projetos.js';
 
 // Renderiza os cards dinamicamente
-function renderCards(lista) {
-  const container = document.querySelector('.card-grid');
+function renderCards(lista, containerSelector) {
+  const container = document.querySelector(containerSelector);
   if (!container) return;
 
   container.innerHTML = '';
 
   lista.forEach(projeto => {
     const card = document.createElement('div');
-    card.className = `card check ${projeto.nivel}`;
+    const classes = `card check ${projeto.nivel}` + (projeto.destaque ? ' destaque' : '');
+    card.className = classes.trim();
+
+    if (projeto.imagem) {
+      const img = document.createElement('img');
+      img.src = projeto.imagem;
+      img.alt = projeto.titulo;
+      img.className = 'miniatura';
+      card.appendChild(img);
+    }
 
     const titulo = document.createElement('h3');
     titulo.textContent = projeto.titulo;
@@ -18,18 +27,9 @@ function renderCards(lista) {
     descricao.textContent = projeto.descricao;
 
     const link = document.createElement('a');
-    link.href = projeto.link;
+    link.href = projeto.link || '#';
     link.target = '_blank';
     link.textContent = 'Ver Projeto';
-
-    // miniatura
-    if (projeto.imagem) {
-      const img = document.createElement('img');
-      img.src = projeto.imagem;
-      img.alt = '';
-      img.className = 'miniatura';
-      card.appendChild(img);
-    }
 
     card.appendChild(titulo);
     card.appendChild(descricao);
@@ -40,19 +40,22 @@ function renderCards(lista) {
 }
 
 function filtrar(nivel = 'todos', busca = '') {
-  const listaFiltrada = projetos.filter(projeto => {
-    const porNivel = nivel === 'todos' || projeto.nivel === nivel;
-    const porBusca = projeto.titulo.toLowerCase().includes(busca.toLowerCase());
+  const destaques = projetos.filter(p => p.destaque);
+  const listaFiltrada = projetos.filter(p => {
+    const porNivel = nivel === 'todos' || p.nivel === nivel;
+    const porBusca = p.titulo.toLowerCase().includes(busca.toLowerCase());
     return porNivel && porBusca;
   });
 
-  renderCards(listaFiltrada);
+  renderCards(destaques, '.destaques-grid');
+  renderCards(listaFiltrada, '.card-grid');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const tabs = document.querySelectorAll('.tab');
   const searchInput = document.getElementById('searchInput');
   const modoBtn = document.getElementById('modoBtn');
+  const langBtn = document.getElementById('langToggleBtn');
 
   // Filtro por tab
   tabs.forEach(button => {
@@ -76,25 +79,24 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.toggle('claro');
   });
 
+  // Alternância de idioma
+  langBtn?.addEventListener('click', () => {
+    idiomaAtual = idiomaAtual === 'pt' ? 'en' : 'pt';
+    langBtn.textContent = idiomaAtual === 'pt' ? '🌐 English' : '🌐 Português';
+
+    const tituloDestaques = document.querySelector('#destaques h2');
+    const tituloProjetos = document.querySelector('#projetos h2');
+    const descricaoProjetos = document.querySelector('#projetos p');
+
+    if (tituloDestaques) tituloDestaques.textContent = idiomaAtual === 'pt' ? '✨ Destaques' : '✨ Highlights';
+    if (tituloProjetos) tituloProjetos.textContent = idiomaAtual === 'pt' ? 'Projetos Power BI' : 'Power BI Projects';
+    if (descricaoProjetos) descricaoProjetos.textContent =
+      idiomaAtual === 'pt'
+        ? 'Confira abaixo os projetos organizados por nível de complexidade:'
+        : 'See below the projects organized by complexity level.';
+  });
+
   // Carregamento inicial
+  let idiomaAtual = 'pt';
   filtrar('todos');
-});
-
-// Alternância de idioma
-const langBtn = document.getElementById("langToggleBtn");
-let idiomaAtual = "pt";
-
-langBtn.addEventListener("click", () => {
-  idiomaAtual = idiomaAtual === "pt" ? "en" : "pt";
-  langBtn.textContent = idiomaAtual === "pt" ? "🌐 English" : "🌐 Português";
-  const destaquesTitle = document.querySelector(".destaques h2");
-  if (destaquesTitle) {
-    destaquesTitle.textContent = idiomaAtual === "pt" ? "✨ Destaques" : "✨ Highlights";
-  }
-  const projetosSub = document.querySelector(".main h2 + p");
-  if (projetosSub) {
-    projetosSub.textContent = idiomaAtual === "pt"
-      ? "Confira abaixo os projetos organizados por nível de complexidade:"
-      : "See below the projects organized by level of complexity.";
-  }
 });
