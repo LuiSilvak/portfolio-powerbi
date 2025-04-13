@@ -155,12 +155,15 @@ body.claro .card p {
 }
 
 #searchInput {
-  flex-grow: 1;
-  padding: 0.4rem 1rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem auto;
+  display: block;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
   border: 1px solid #444;
   background-color: white;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #000;
 }
 
@@ -327,3 +330,17 @@ body.claro .card.destaque p {
   background-color: #444;
 }
 
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.destaques-titulo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffc107;
+  margin-left: 1rem;
+}
