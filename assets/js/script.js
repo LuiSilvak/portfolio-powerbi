@@ -12,13 +12,14 @@ function renderCards(lista, containerSelector) {
     const classes = `card check ${projeto.nivel}` + (projeto.destaque ? ' destaque' : '');
     card.className = classes.trim();
 
-    if (projeto.imagem) {
+    if (projeto.imagem && projeto.imagem.trim() !== '') {
       const img = document.createElement('img');
       img.src = projeto.imagem;
       img.alt = projeto.titulo;
       img.className = 'miniatura';
+      img.onerror = () => img.remove(); // Remove imagem se não carregar
       card.appendChild(img);
-    }
+    }    
 
     const titulo = document.createElement('h3');
     titulo.textContent = projeto.titulo;
