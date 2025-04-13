@@ -18,6 +18,10 @@ body.claro {
   color: #222;
 }
 
+body.claro .card p {
+  color: #333;
+}
+
 .container {
   display: flex;
   height: 100vh;
@@ -147,10 +151,18 @@ body.claro {
 
 #searchInput {
   flex-grow: 1;
-  padding: 0.5rem;
-  border-radius: 4px;
-  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background-color: white;
   font-size: 0.9rem;
+  color: #000;
+}
+
+body.claro #searchInput {
+  border: 1px solid #aaa;
+  background-color: #fff;
+  color: #000;
 }
 
 .section {
@@ -204,4 +216,5 @@ body.claro {
 .card p {
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
+  color: #ccc;
 }
