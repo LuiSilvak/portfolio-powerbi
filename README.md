@@ -1,96 +1,72 @@
-# 📊 Portfólio Power BI - Luís Silva
+# 💼 Portfólio Power BI - Luís Silva
 
-Bem-vindo ao meu portfólio profissional de projetos em **Power BI**, onde compartilho dashboards interativos, análises estratégicas e automações de dados voltadas para o setor público e privado.
+Este é um portfólio interativo e responsivo criado para apresentar projetos desenvolvidos com Power BI, com foco em análise de dados corporativos, públicos e avançados. A interface é moderna, com navegação fluida, modo claro/escuro, filtro por nível de complexidade e suporte multilíngue (PT/EN).
 
----
+## 📌 Funcionalidades
 
-## 👨‍💼 Sobre Mim
+- 🎯 **Filtros por Nível de Projeto**  
+  Visualize projetos por nível: Iniciante, Intermediário ou Avançado.
 
-Sou **Luís Silva**, Analista de Dados com sólida experiência em:
-- Visualização de dados com Power BI (Power Query, DAX)
-- Análises públicas e corporativas
-- Desenvolvimento de soluções educacionais, logísticas e financeiras
-- DevOps e automações com Python, SQL e integrações via API
+- 🌙 **Modo Claro/Escuro**  
+  Alternância de tema para melhor acessibilidade.
 
----
+- 🌐 **Suporte Bilíngue**  
+  Interface em **Português** e **Inglês**, com botão de troca dinâmico.
 
-## 🧠 Funcionalidades do Portfólio
+- 🔍 **Barra de Pesquisa**  
+  Pesquise projetos pelo nome/título em tempo real.
 
-✅ **Filtros por Nível de Complexidade**  
-Explore projetos por categoria:
-- ✅ Iniciante
-- 📊 Intermediário
-- 🧠 Avançado
-- 🔷 Todos
+- ✨ **Destaques em Evidência**  
+  Projetos importantes são destacados com borda especial e separados no topo.
 
-✅ **Modo Claro / Escuro**  
-Alternância visual com um clique no botão 🌙
+- 🖥️ **Exibição de Dashboards via Modal Embedado**  
+  Os dashboards Power BI são visualizados diretamente no portfólio via `<iframe>` em um modal moderno.
 
-✅ **Pesquisa Instantânea**  
-🔍 Pesquise projetos por título em tempo real.
+- 📱 **Responsivo**  
+  Totalmente adaptado para celulares, tablets e desktops.
 
-✅ **Exportação para PDF**  
-📥 Gere um portfólio completo em PDF com todos os projetos.
-
-✅ **Suporte Multilíngue**  
-🌐 Interface disponível em **Português** e **Inglês**
-
-✅ **Seção de Destaques**  
-✨ Projetos marcados como principais são exibidos com destaque visual.
-
----
-
-## 🧩 Tecnologias Utilizadas
-
-- **HTML, CSS, JavaScript**
-- **Power BI Desktop / Power BI Service**
-- **html2pdf.js** (geração de PDF)
-- **Tradução dinâmica via JSON**
-- **Responsivo e leve para deploy no GitHub Pages**
-
----
-
-## 🚀 Como Visualizar
-
-Você pode acessar diretamente no GitHub Pages:
+## 📂 Estrutura do Projeto
 
 ```
-https://luisilvak.github.io/portfolio-powerbi/
-```
-
----
-
-## 🛠 Como Executar Localmente
-
-```bash
-git clone https://github.com/LuiSilvak/portfolio-powerbi.git
-cd portfolio-powerbi
-# abra o index.html no navegador
-```
-
----
-
-## 📁 Estrutura de Diretórios
-
-```
-├── index.html
+portfolio-powerbi/
+│
 ├── assets/
-│   ├── css/style.css
-│   ├── js/script.js
-│   ├── js/projetos.js
+│   ├── css/
+│   │   └── style.css           # Estilos globais e responsividade
+│   ├── js/
+│   │   ├── script.js           # Lógica de interação e tradução
+│   │   └── projetos.js         # Lista dinâmica dos projetos
 │   └── images/
-├── blue_background.jpg
-├── README.md
+│       └── *.jpg               # Miniaturas dos dashboards
+│
+├── index.html                  # Página principal
+└── README.md                   # Este arquivo
 ```
 
+## 🧠 Tecnologias Utilizadas
+
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- Power BI (Embed Online)
+- Responsividade com media queries
+- Sem frameworks ou bibliotecas externas
+
+## 📈 Exemplos de Projetos
+
+| Nível      | Projeto                                                   |
+|------------|-----------------------------------------------------------|
+| Iniciante  | Dashboard de Vendas Simples                               |
+| Intermediário | Análise de Despesas e Orçamento Público              |
+| Avançado   | Indicadores Estratégicos Corporativos e Indústria 4.0     |
+
+> Acesse o projeto no GitHub Pages (se estiver hospedado):  
+> 🌐 **[Visualizar Portfólio](https://seu-usuario.github.io/portfolio-powerbi/)**
+
+## 🔓 Licença
+
+Este projeto é de uso livre para fins educacionais e profissionais. Todos os dashboards são exemplos fictícios para fins de demonstração.
+
 ---
 
-## 📫 Contato
-
-- ✉️ Email: luisilvaoliveira4@gmail.com  
-- 🔗 [LinkedIn](https://linkedin.com/in/luissilvak)  
-- 🧠 GitHub: [github.com/LuiSilvak](https://github.com/LuiSilvak)
-
----
-
-© 2024 - Luís Silva | Todos os direitos reservados.
+**Desenvolvido por Luís Silva** 🚀
