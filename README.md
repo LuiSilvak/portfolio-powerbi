@@ -8,7 +8,7 @@ Neste repositório, você encontra uma vitrine dos principais projetos que desen
 
 ## 👨‍💼 Sobre Mim
 
-Sou **Luís Silva**, Analista de Dados com experiência sólida em:
+Sou **Luís Silva**, Analista de Dados com experiência em:
 
 - Criação de dashboards interativos e relatórios executivos
 - Modelagem de dados com DAX avançado
