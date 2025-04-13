@@ -1,5 +1,7 @@
 import projetos from './projetos.js';
 
+let idiomaAtual = 'pt';
+
 // Renderiza os cards dinamicamente
 function renderCards(lista, containerSelector) {
   const container = document.querySelector(containerSelector);
@@ -22,15 +24,15 @@ function renderCards(lista, containerSelector) {
     }
 
     const titulo = document.createElement('h3');
-    titulo.textContent = projeto.titulo;
+    titulo.textContent = idiomaAtual === 'en' ? projeto.titulo_en || projeto.titulo : projeto.titulo;
 
     const descricao = document.createElement('p');
-    descricao.textContent = projeto.descricao;
+    descricao.textContent = idiomaAtual === 'en' ? projeto.descricao_en || projeto.descricao : projeto.descricao;
 
     const link = document.createElement('a');
     link.href = projeto.link || '#';
     link.target = '_blank';
-    link.textContent = 'Ver Projeto';
+    link.textContent = idiomaAtual === 'en' ? 'View Project' : 'Ver Projeto';
 
     card.appendChild(titulo);
     card.appendChild(descricao);
@@ -44,7 +46,8 @@ function filtrar(nivel = 'todos', busca = '') {
   const destaques = projetos.filter(p => p.destaque);
   const listaFiltrada = projetos.filter(p => {
     const porNivel = nivel === 'todos' || p.nivel === nivel;
-    const porBusca = p.titulo.toLowerCase().includes(busca.toLowerCase());
+    const titulo = idiomaAtual === 'en' ? p.titulo_en || p.titulo : p.titulo;
+    const porBusca = titulo.toLowerCase().includes(busca.toLowerCase());
     return porNivel && porBusca;
   });
 
@@ -82,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Alternância de idioma
-  let idiomaAtual = 'pt';
   langBtn?.addEventListener('click', () => {
     idiomaAtual = idiomaAtual === 'pt' ? 'en' : 'pt';
     langBtn.textContent = idiomaAtual === 'pt' ? '🌐 English' : '🌐 Português';
@@ -93,25 +95,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (tituloDestaques) tituloDestaques.textContent = idiomaAtual === 'pt' ? '✨ Destaques' : '✨ Highlights';
     if (tituloProjetos) tituloProjetos.textContent = idiomaAtual === 'pt' ? 'Projetos Power BI' : 'Power BI Projects';
-    if (descricaoProjetos) descricaoProjetos.textContent =
-      idiomaAtual === 'pt'
+    if (descricaoProjetos) {
+      descricaoProjetos.textContent = idiomaAtual === 'pt'
         ? 'Confira abaixo os projetos organizados por nível de complexidade:'
         : 'See below the projects organized by complexity level.';
+    }
+
+    const nivelAtual = document.querySelector('.tab.active')?.dataset.nivel || 'todos';
+    const buscaAtual = searchInput?.value || '';
+    filtrar(nivelAtual, buscaAtual);
   });
 
   // Exportar PDF
   pdfBtn?.addEventListener('click', () => {
-    // Garante que todos os projetos estejam visíveis
     document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
     const todosBtn = document.querySelector('[data-nivel="todos"]');
     todosBtn?.classList.add('active');
-  
-    filtrar('todos'); // mostra todos os projetos
-  
-    // Espera o DOM renderizar os cards antes de capturar
+
+    filtrar('todos');
+
     setTimeout(() => {
       const element = document.body;
-  
+
       const opt = {
         margin: 0,
         filename: 'portfolio-luis-silva.pdf',
@@ -124,11 +129,11 @@ document.addEventListener('DOMContentLoaded', () => {
         jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' },
         pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
       };
-  
+
       html2pdf().set(opt).from(element).save();
-    }, 300); // tempo para renderizar antes de capturar
-  });    
-  
+    }, 300);
+  });
+
   // Carregamento inicial
   filtrar('todos');
 });
