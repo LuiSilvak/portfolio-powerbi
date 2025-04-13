@@ -103,6 +103,36 @@ const projetos = [
     imagem: "./assets/images/governo.jpg",
     link: "#",
     nivel: "avancado"
+  },
+  {
+    titulo: "Análise e Previsão de Demanda de Produtos",
+    descricao: "Previsão de demanda com séries temporais para estoque e logística.",
+    link: "#",
+    nivel: "avancado"
+  },
+  {
+    titulo: "Análise de Riscos e Oportunidades em Investimentos",
+    descricao: "Modelagem e visualização de risco-retorno em carteira de ativos.",
+    link: "#",
+    nivel: "avancado"
+  },
+  {
+    titulo: "Análise de Indicadores de Sustentabilidade",
+    descricao: "Monitoramento de KPIs ambientais e metas de ESG em indústria.",
+    link: "#",
+    nivel: "avancado"
+  },
+  {
+    titulo: "Análise de Desempenho em Marketing Digital e E-commerce",
+    descricao: "Avaliação de campanhas, funil de vendas e canais de aquisição.",
+    link: "#",
+    nivel: "avancado"
+  },
+  {
+    titulo: "Análise de Desempenho Operacional em Indústria 4.0",
+    descricao: "Painel com sensores IoT, produção em tempo real e alertas inteligentes.",
+    link: "#",
+    nivel: "avancado"
   }
 ];
 
