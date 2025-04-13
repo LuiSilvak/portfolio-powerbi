@@ -1,64 +1,96 @@
 # 📊 Portfólio Power BI - Luís Silva
 
-Bem-vindo ao meu portfólio profissional de **Análise de Dados com Power BI**!
-
-Neste repositório, você encontra uma vitrine dos principais projetos que desenvolvi com foco em dados educacionais, públicos e corporativos, usando **Power BI**, **DAX**, **Power Query** e automações com **ETL**.
+Bem-vindo ao meu portfólio profissional de projetos em **Power BI**, onde compartilho dashboards interativos, análises estratégicas e automações de dados voltadas para o setor público e privado.
 
 ---
 
 ## 👨‍💼 Sobre Mim
 
-Sou **Luís Silva**, Analista de Dados com experiência em:
-
-- Criação de dashboards interativos e relatórios executivos
-- Modelagem de dados com DAX avançado
-- Integrações com bases públicas e privadas
-- Automação de fluxos de trabalho com Power Query
-
-Atualmente atuo na **ESCEX (TCE-MA)**, contribuindo com projetos educacionais, hospitalares, logísticos e financeiros.
+Sou **Luís Silva**, Analista de Dados com sólida experiência em:
+- Visualização de dados com Power BI (Power Query, DAX)
+- Análises públicas e corporativas
+- Desenvolvimento de soluções educacionais, logísticas e financeiras
+- DevOps e automações com Python, SQL e integrações via API
 
 ---
 
-## 🔗 Acesse o Portfólio Online
+## 🧠 Funcionalidades do Portfólio
 
-Você pode acessar a versão publicada em **GitHub Pages** aqui:
+✅ **Filtros por Nível de Complexidade**  
+Explore projetos por categoria:
+- ✅ Iniciante
+- 📊 Intermediário
+- 🧠 Avançado
+- 🔷 Todos
 
-👉 [luissilvak.github.io/portfolio-powerbi](https://luissilvak.github.io/portfolio-powerbi)
+✅ **Modo Claro / Escuro**  
+Alternância visual com um clique no botão 🌙
+
+✅ **Pesquisa Instantânea**  
+🔍 Pesquise projetos por título em tempo real.
+
+✅ **Exportação para PDF**  
+📥 Gere um portfólio completo em PDF com todos os projetos.
+
+✅ **Suporte Multilíngue**  
+🌐 Interface disponível em **Português** e **Inglês**
+
+✅ **Seção de Destaques**  
+✨ Projetos marcados como principais são exibidos com destaque visual.
 
 ---
 
-## 📁 Estrutura do Projeto
+## 🧩 Tecnologias Utilizadas
+
+- **HTML, CSS, JavaScript**
+- **Power BI Desktop / Power BI Service**
+- **html2pdf.js** (geração de PDF)
+- **Tradução dinâmica via JSON**
+- **Responsivo e leve para deploy no GitHub Pages**
+
+---
+
+## 🚀 Como Visualizar
+
+Você pode acessar diretamente no GitHub Pages:
+
+```
+https://luisilvak.github.io/portfolio-powerbi/
+```
+
+---
+
+## 🛠 Como Executar Localmente
 
 ```bash
-📦 portfolio-powerbi/
-├── assets/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── script.js
-│   └── images/
-│       └── luis.png
+git clone https://github.com/LuiSilvak/portfolio-powerbi.git
+cd portfolio-powerbi
+# abra o index.html no navegador
+```
+
+---
+
+## 📁 Estrutura de Diretórios
+
+```
 ├── index.html
+├── assets/
+│   ├── css/style.css
+│   ├── js/script.js
+│   ├── js/projetos.js
+│   └── images/
+├── blue_background.jpg
 ├── README.md
 ```
 
 ---
 
-## 📌 Tecnologias Utilizadas
+## 📫 Contato
 
-- **HTML5**
-- **CSS3** (com layout responsivo)
-- **JavaScript** (para navegação por abas)
-- **Power BI** (links dos projetos serão adicionados)
-- **GitHub Pages** (para hospedagem gratuita)
+- ✉️ Email: luisilvaoliveira4@gmail.com  
+- 🔗 [LinkedIn](https://linkedin.com/in/luissilvak)  
+- 🧠 GitHub: [github.com/LuiSilvak](https://github.com/LuiSilvak)
 
 ---
 
-## 📬 Contato
-
-- 📧 Email: [luisilvaoliveira4@gmail.com](mailto:luisilvaoliveira4@gmail.com)
-- 🔗 LinkedIn: [linkedin.com/in/luissilvak](https://www.linkedin.com/in/luissilvak/)
-
----
-
-> Este projeto está sob a licença MIT — sinta-se à vontade para utilizar, personalizar e compartilhar!
+© 2024 - Luís Silva | Todos os direitos reservados.
