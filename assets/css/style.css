@@ -253,9 +253,9 @@ body.claro #searchInput {
   margin-top: auto;
   margin-bottom: 0.5rem;
   padding: 0.3rem 0.8rem;
-  background-color: #03a9f4; /* Azul claro */
-  color: white;              /* Texto branco */
-  text-decoration: none;     /* Remove sublinhado */
+  background-color: #03a9f4;
+  color: white;
+  text-decoration: none;
   font-size: 0.82rem;
   font-weight: bold;
   border-radius: 4px;
@@ -264,7 +264,7 @@ body.claro #searchInput {
 }
 
 .card a:hover {
-  background-color: #0288d1; /* Tom mais escuro no hover */
+  background-color: #0288d1;
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(3, 169, 244, 0.8);
 }
@@ -279,7 +279,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Extra Buttons */
 .extra-buttons {
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -306,7 +305,6 @@ html {
   background-color: #2196f3;
 }
 
-/* Seção de Destaques */
 #destaques {
   margin-top: 2rem;
 }
@@ -397,6 +395,59 @@ body.claro .card.destaque p {
   display: none;
 }
 
+/* Modal Power BI */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.85);
+}
+
+.modal-content {
+  background-color: #1f1f1f;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 960px;
+  box-shadow: 0 0 15px #000;
+  text-align: center;
+  color: #fff;
+}
+
+.modal-content iframe {
+  border-radius: 8px;
+}
+
+.modal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal .close:hover {
+  color: #fff;
+}
+
+.powerbi-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #90caf9;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.powerbi-link:hover {
+  text-decoration: underline;
+}
+
 /* Impressão e exportação para PDF */
 @media print {
   body {
@@ -428,7 +479,7 @@ body.claro .card.destaque p {
   .card, .card-grid, .destaques-grid {
     break-inside: avoid;
     page-break-inside: avoid;
-  }  
+  }
 
   a {
     color: black !important;
@@ -439,5 +490,3 @@ body.claro .card.destaque p {
     display: none !important;
   }
 }
-
-
