@@ -403,6 +403,7 @@ body.claro .card.destaque p {
     background: white !important;
     color: black !important;
     font-size: 12px;
+    overflow: visible !important;
   }
 
   .sidebar {
@@ -420,6 +421,7 @@ body.claro .card.destaque p {
 
   .main {
     width: 100%;
+    height: auto !important;
     padding: 1rem !important;
     overflow: visible !important;
   }
@@ -446,6 +448,10 @@ body.claro .card.destaque p {
   .card-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
     gap: 1rem;
+  }
+
+  .card-grid, .destaques-grid {
+    page-break-inside: avoid;
   }
 
   .main h2,
