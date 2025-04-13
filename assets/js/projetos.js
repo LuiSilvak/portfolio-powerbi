@@ -5,7 +5,7 @@ const projetos = [
     descricao: "Indicadores básicos de vendas segmentados por período.",
     descricao_en: "Basic sales indicators segmented by period.",
     imagem: "./assets/images/vendas-simples.jpg",
-    link: "#",
+    link: "https://app.powerbi.com/reportEmbed?reportId=4801fd46-d865-447d-9aa6-b3745b273a2e&autoAuth=true&ctid=ec6e47d2-a04c-4d6c-bf8f-d8ed2785749b",
     nivel: "iniciante",
     destaque: true
   },
