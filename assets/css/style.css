@@ -309,8 +309,9 @@ body.claro .card.destaque p {
   top: 20px;
   right: 20px;
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   z-index: 1000;
+  margin-right: 10px; /* Novo: afasta do scroll */
 }
 
 .top-right-buttons button,
@@ -341,8 +342,8 @@ body.claro .card.destaque p {
 .destaques-titulo {
   font-size: 1.2rem;         /* Reduzido */
   color: #ffc107;
-  margin-top: 2rem;
-  margin-left: 1rem;         /* Afasta da lateral esquerda */
+  margin-top: 1rem;
+  margin-left: 2rem;         /* Afasta da lateral esquerda */
   display: flex;
   align-items: center;
   gap: 0.5rem;
