@@ -425,6 +425,11 @@ body.claro .card.destaque p {
     break-inside: avoid;
   }
 
+  .card, .card-grid, .destaques-grid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }  
+
   a {
     color: black !important;
     text-decoration: none;
