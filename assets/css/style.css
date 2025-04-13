@@ -342,7 +342,6 @@ body.claro .card.destaque p {
 .destaques-titulo {
   font-size: 1.2rem;         /* Reduzido */
   color: #ffc107;
-  margin-top: 5rem;
   margin-left: 2rem;         /* Afasta da lateral esquerda */
   display: flex;
   align-items: center;
