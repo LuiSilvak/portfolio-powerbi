@@ -185,6 +185,9 @@ body.claro #searchInput {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: #1f1f1f;
   padding: 1rem;
   border-radius: 8px;
@@ -213,8 +216,12 @@ body.claro #searchInput {
 }
 
 .card a {
-  color: violet;
-  font-size: 0.85rem;
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: 0.5rem;
+  color: #e1bee7;
+  text-decoration: underline;
+  font-size: 0.9rem;
 }
 
 .card p {
