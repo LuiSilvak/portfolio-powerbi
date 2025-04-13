@@ -39,6 +39,7 @@ const traducoes = {
   }
 };
 
+// MODAL: ABRIR
 function abrirModal(link) {
   const modal = document.getElementById('powerbiModal');
   const iframe = modal.querySelector('iframe');
@@ -51,6 +52,7 @@ function abrirModal(link) {
   modal.style.display = 'block';
 }
 
+// MODAL: FECHAR
 function fecharModal() {
   const modal = document.getElementById('powerbiModal');
   const iframe = modal.querySelector('iframe');
@@ -59,6 +61,7 @@ function fecharModal() {
   modal.style.display = 'none';
 }
 
+// RENDERIZAÇÃO DOS CARDS
 function renderCards(lista, containerSelector) {
   const container = document.querySelector(containerSelector);
   if (!container) return;
@@ -101,6 +104,7 @@ function renderCards(lista, containerSelector) {
   });
 }
 
+// FILTRO GERAL
 function filtrar(nivel = 'todos', busca = '') {
   const destaques = projetos.filter(p => p.destaque);
   const listaFiltrada = projetos.filter(p => {
@@ -114,6 +118,7 @@ function filtrar(nivel = 'todos', busca = '') {
   renderCards(listaFiltrada, '.card-grid');
 }
 
+// DOM READY
 document.addEventListener('DOMContentLoaded', () => {
   const tabs = document.querySelectorAll('.tab');
   const searchInput = document.getElementById('searchInput');
@@ -121,14 +126,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const langBtn = document.getElementById('langToggleBtn');
   const fecharBtn = document.querySelector('.modal .close');
 
+  // Fechar modal
   fecharBtn?.addEventListener('click', fecharModal);
-
   window.addEventListener('click', (e) => {
     if (e.target.id === 'powerbiModal') {
       fecharModal();
     }
   });
 
+  // Tabs filtro
   tabs.forEach(button => {
     button.addEventListener('click', () => {
       tabs.forEach(btn => btn.classList.remove('active'));
@@ -139,28 +145,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Busca
   searchInput?.addEventListener('input', e => {
     const nivel = document.querySelector('.tab.active')?.dataset.nivel || 'todos';
     filtrar(nivel, e.target.value);
   });
 
+  // Modo claro/escuro
   modoBtn?.addEventListener('click', () => {
     document.body.classList.toggle('claro');
   });
 
+  // Alternância de idioma
   langBtn?.addEventListener('click', () => {
     idiomaAtual = idiomaAtual === 'pt' ? 'en' : 'pt';
     langBtn.textContent = idiomaAtual === 'pt' ? '🌐 English' : '🌐 Português';
 
+    // Tabs
     tabs.forEach(tab => {
       const key = tab.dataset.nivel;
       tab.innerHTML = traducoes[idiomaAtual].tabs[key];
     });
 
+    // Input
     if (searchInput) {
       searchInput.placeholder = traducoes[idiomaAtual].searchPlaceholder;
     }
 
+    // Cabeçalhos
     const tituloDestaques = document.querySelector('.destaques-titulo');
     if (tituloDestaques) tituloDestaques.textContent = traducoes[idiomaAtual].destaques;
 
@@ -169,6 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (tituloProjetos) tituloProjetos.textContent = traducoes[idiomaAtual].tituloPrincipal;
     if (descricaoProjetos) descricaoProjetos.textContent = traducoes[idiomaAtual].descricaoPrincipal;
 
+    // Sidebar
     document.querySelectorAll('.sidebar ul li').forEach(li => {
       if (li.textContent.includes('Contato') || li.textContent.includes('Contact')) {
         li.innerHTML = `<ion-icon name="mail-outline"></ion-icon>${traducoes[idiomaAtual].contato}`;
@@ -186,5 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
     filtrar(nivelAtual, buscaAtual);
   });
 
+  // Inicial
   filtrar('todos');
 });
