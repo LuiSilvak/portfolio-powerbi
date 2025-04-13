@@ -399,28 +399,24 @@ body.claro .card.destaque p {
 
 /* Impressão e exportação para PDF */
 @media print {
+  body {
+    background: white !important;
+    color: black !important;
+    overflow: visible !important;
+  }
+
   .sidebar,
   .top-right-buttons,
-  .tab,
-  #searchInput,
-  .destaques-titulo {
+  .tabs,
+  #searchInput {
     display: none !important;
   }
 
   .main {
-    width: 100% !important;
-    height: auto !important;
     overflow: visible !important;
-  }
-
-  .container {
-    display: block !important;
     height: auto !important;
-  }
-
-  body {
-    background: white !important;
-    color: black !important;
+    width: 100% !important;
+    padding: 0 !important;
   }
 
   .card,
@@ -429,13 +425,14 @@ body.claro .card.destaque p {
     break-inside: avoid;
   }
 
-  h2, p, .card h3, .card p {
+  a {
     color: black !important;
+    text-decoration: none;
   }
 
-  a {
-    color: #000 !important;
-    text-decoration: underline;
+  .destaques-titulo {
+    display: none !important;
   }
 }
+
 
