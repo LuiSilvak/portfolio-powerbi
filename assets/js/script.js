@@ -2,7 +2,6 @@ import projetos from './projetos.js';
 
 let idiomaAtual = 'pt';
 
-// Traduções fixas
 const traducoes = {
   pt: {
     tabs: {
@@ -18,7 +17,8 @@ const traducoes = {
     descricaoPrincipal: 'Confira abaixo os projetos organizados por nível de complexidade:',
     contato: 'Contato',
     repositorios: 'Repositórios',
-    cidade: 'São Luís – MA'
+    cidade: 'São Luís – MA',
+    abrirModal: 'Ver Projeto'
   },
   en: {
     tabs: {
@@ -34,18 +34,18 @@ const traducoes = {
     descricaoPrincipal: 'See below the projects organized by complexity level.',
     contato: 'Contact',
     repositorios: 'Repositories',
-    cidade: 'São Luís – MA'
+    cidade: 'São Luís – MA',
+    abrirModal: 'View Project'
   }
 };
 
-// Renderiza os cards dinamicamente
 function renderCards(lista, containerSelector) {
   const container = document.querySelector(containerSelector);
   if (!container) return;
 
   container.innerHTML = '';
 
-  lista.forEach(projeto => {
+  lista.forEach((projeto, index) => {
     const card = document.createElement('div');
     const classes = `card check ${projeto.nivel}` + (projeto.destaque ? ' destaque' : '');
     card.className = classes.trim();
@@ -65,20 +65,53 @@ function renderCards(lista, containerSelector) {
     const descricao = document.createElement('p');
     descricao.textContent = idiomaAtual === 'en' ? projeto.descricao_en || projeto.descricao : projeto.descricao;
 
-    const link = document.createElement('a');
-    link.href = projeto.link || '#';
-    link.target = '_blank';
-    link.textContent = traducoes[idiomaAtual].projetoBtn;
+    const botao = document.createElement('a');
+    botao.href = '#';
+    botao.classList.add('ver-projeto');
+    botao.dataset.index = index;
+    botao.textContent = traducoes[idiomaAtual].abrirModal;
 
     card.appendChild(titulo);
     card.appendChild(descricao);
-    card.appendChild(link);
+    card.appendChild(botao);
 
     container.appendChild(card);
   });
+
+  ativarModais();
 }
 
-// Aplica filtragem por nível e busca
+function ativarModais() {
+  const botoes = document.querySelectorAll('.ver-projeto');
+  const modal = document.getElementById('modal');
+  const iframe = document.getElementById('modal-iframe');
+  const externalLink = document.getElementById('modal-external-link');
+  const closeBtn = document.querySelector('.close-modal');
+
+  botoes.forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const index = parseInt(btn.dataset.index);
+      const projeto = projetos[index];
+      iframe.src = projeto.link;
+      externalLink.href = projeto.link;
+      modal.style.display = 'block';
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    iframe.src = '';
+  });
+
+  window.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      iframe.src = '';
+    }
+  });
+}
+
 function filtrar(nivel = 'todos', busca = '') {
   const destaques = projetos.filter(p => p.destaque);
   const listaFiltrada = projetos.filter(p => {
@@ -92,14 +125,12 @@ function filtrar(nivel = 'todos', busca = '') {
   renderCards(listaFiltrada, '.card-grid');
 }
 
-// Executa após o carregamento da página
 document.addEventListener('DOMContentLoaded', () => {
   const tabs = document.querySelectorAll('.tab');
   const searchInput = document.getElementById('searchInput');
   const modoBtn = document.getElementById('modoBtn');
   const langBtn = document.getElementById('langToggleBtn');
 
-  // Alternância entre abas (níveis)
   tabs.forEach(button => {
     button.addEventListener('click', () => {
       tabs.forEach(btn => btn.classList.remove('active'));
@@ -110,44 +141,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Filtro por texto da busca
   searchInput?.addEventListener('input', e => {
     const nivel = document.querySelector('.tab.active')?.dataset.nivel || 'todos';
     filtrar(nivel, e.target.value);
   });
 
-  // Alternância entre temas claro/escuro
   modoBtn?.addEventListener('click', () => {
     document.body.classList.toggle('claro');
   });
 
-  // Alternância de idioma
   langBtn?.addEventListener('click', () => {
     idiomaAtual = idiomaAtual === 'pt' ? 'en' : 'pt';
     langBtn.textContent = idiomaAtual === 'pt' ? '🌐 English' : '🌐 Português';
 
-    // Tradução das tabs
     tabs.forEach(tab => {
       const key = tab.dataset.nivel;
       tab.innerHTML = traducoes[idiomaAtual].tabs[key];
     });
 
-    // Placeholder da busca
     if (searchInput) {
       searchInput.placeholder = traducoes[idiomaAtual].searchPlaceholder;
     }
 
-    // Destaques título
     const tituloDestaques = document.querySelector('.destaques-titulo');
     if (tituloDestaques) tituloDestaques.textContent = traducoes[idiomaAtual].destaques;
 
-    // Cabeçalho e descrição principal
     const tituloProjetos = document.querySelector('.main h2');
     const descricaoProjetos = document.querySelector('.main p');
     if (tituloProjetos) tituloProjetos.textContent = traducoes[idiomaAtual].tituloPrincipal;
     if (descricaoProjetos) descricaoProjetos.textContent = traducoes[idiomaAtual].descricaoPrincipal;
 
-    // Sidebar
     document.querySelectorAll('.sidebar ul li').forEach(li => {
       if (li.textContent.includes('Contato') || li.textContent.includes('Contact')) {
         li.innerHTML = `<ion-icon name="mail-outline"></ion-icon>${traducoes[idiomaAtual].contato}`;
@@ -160,12 +183,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Reaplica filtros com idioma atualizado
     const nivelAtual = document.querySelector('.tab.active')?.dataset.nivel || 'todos';
     const buscaAtual = searchInput?.value || '';
     filtrar(nivelAtual, buscaAtual);
   });
 
-  // Carregamento inicial
   filtrar('todos');
 });
