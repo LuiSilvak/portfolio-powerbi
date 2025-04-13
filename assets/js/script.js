@@ -99,28 +99,26 @@ document.addEventListener('DOMContentLoaded', () => {
         : 'See below the projects organized by complexity level.';
   });
 
-  // Exportar para PDF
+  // Exportar PDF
   pdfBtn?.addEventListener('click', () => {
-    const element = document.body; // ⬅️ use o body, não o .main
-
+    const element = document.body; // Captura o body completo
+  
     const opt = {
-      margin:       0,
-      filename:     'portfolio-luis-silva.pdf',
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  {
+      margin: 0,
+      filename: 'portfolio-luis-silva.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: {
         scale: 2,
         scrollY: 0,
         useCORS: true
       },
-      jsPDF:        { unit: 'pt', format: 'a4', orientation: 'portrait' },
-      pagebreak:    { mode: ['css', 'avoid-all', 'legacy'] }
+      jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' },
+      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
     };
-
+  
     html2pdf().set(opt).from(element).save();
   });
-
-
-
+  
   // Carregamento inicial
   filtrar('todos');
 });
