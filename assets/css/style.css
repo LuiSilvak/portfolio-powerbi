@@ -232,3 +232,8 @@ body.claro #searchInput {
   margin-bottom: 0.5rem;
   color: #ccc;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
