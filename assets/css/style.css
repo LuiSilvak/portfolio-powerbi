@@ -11,8 +11,8 @@ body {
   background: url('../images/blue_background.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #fff;
-  height: 100vh;
-  overflow: hidden;
+  /* height: 100vh; */
+  /* overflow: hidden; */
 }
 
 body.claro {
