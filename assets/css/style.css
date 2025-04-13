@@ -140,7 +140,7 @@ body.claro .card p {
 }
 
 .tab[data-nivel="intermediario"] {
-  background-color: #fbc02d;
+  background-color: #03a9f4;
 }
 
 .tab[data-nivel="avancado"] {
@@ -148,7 +148,7 @@ body.claro .card p {
 }
 
 .tab[data-nivel="todos"] {
-  background-color: #03a9f4;
+  background-color: #fbc02d;
 }
 
 .search-container {
