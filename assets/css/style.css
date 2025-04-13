@@ -222,6 +222,7 @@ body.claro #searchInput {
   color: #e1bee7;
   text-decoration: underline;
   font-size: 0.9rem;
+  font-weight: bold;
 }
 
 .card p {
