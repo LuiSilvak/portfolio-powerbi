@@ -354,7 +354,7 @@ body.claro .card.destaque p {
   margin-top: 0rem;
   margin-left: 10rem;         /* Afasta da lateral esquerda */
   margin-right: 2rem;
-  display: inline-block;
+  display: flex;
   align-items: center;
   gap: 0.5rem;
 }
