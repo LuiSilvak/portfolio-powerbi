@@ -91,7 +91,7 @@ body.claro .card p {
 }
 
 .main h2 + p {
-  margin-bottom: 1.5rem; /* aumenta o espaçamento abaixo do parágrafo */
+  margin-bottom: 1.5rem;
 }
 
 .tabs {
@@ -248,8 +248,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
-
 /* Extra Buttons */
 .extra-buttons {
   margin-top: 1rem;
@@ -319,7 +317,7 @@ body.claro .card.destaque p {
   display: flex;
   gap: 1rem;
   z-index: 1000;
-  margin-right: 10px; /* Novo: afasta do scroll */
+  margin-right: 10px;
 }
 
 .top-right-buttons button,
@@ -348,11 +346,11 @@ body.claro .card.destaque p {
 }
 
 .destaques-titulo {
-  font-size: 1rem;         /* Reduzido */
+  font-size: 1rem;
   color: #ffc107;
   font-weight: bold;
   margin-top: 0rem;
-  margin-left: 10rem;         /* Afasta da lateral esquerda */
+  margin-left: 10rem;
   margin-right: 2rem;
   display: flex;
   align-items: center;

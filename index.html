@@ -35,27 +35,25 @@
           <button class="tab" data-nivel="avancado">🧠 Avançado</button>
         </div>
         <h3 class="destaques-titulo">✨ Destaques</h3>
-      </div>      
+      </div>
 
       <div class="top-right-buttons">
         <button id="modoBtn">🌙 Modo Claro/Escuro</button>
         <button id="langToggleBtn">🌐 English</button>
-        <a href="portfolio.pdf" download class="download-btn">📥 Baixar PDF</a>
-      </div>      
+        <button id="pdfBtn" class="download-btn">📥 Baixar PDF</button>
+      </div>
 
       <input type="text" id="searchInput" placeholder="🔍 Pesquisar projeto..." />
 
-      <!-- Seção de Destaques (será preenchida via script.js) -->
       <section id="destaques">
-        <!-- Este <h2> pode ser ocultado via CSS, se já estiver acima -->
         <h2 style="display: none;">✨ Destaques</h2>
         <div class="card-grid destaques-grid"></div>
       </section>
-
-
     </main>
   </div>
 
+  <!-- Bibliotecas extras -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script type="module" src="./assets/js/script.js"></script>
 </body>
 </html>

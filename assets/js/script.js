@@ -19,7 +19,7 @@ function renderCards(lista, containerSelector) {
       img.className = 'miniatura';
       img.onerror = () => img.remove(); // Remove imagem se não carregar
       card.appendChild(img);
-    }    
+    }
 
     const titulo = document.createElement('h3');
     titulo.textContent = projeto.titulo;
@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   const modoBtn = document.getElementById('modoBtn');
   const langBtn = document.getElementById('langToggleBtn');
+  const pdfBtn = document.getElementById('pdfBtn');
 
   // Filtro por tab
   tabs.forEach(button => {
@@ -81,13 +82,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Alternância de idioma
+  let idiomaAtual = 'pt';
   langBtn?.addEventListener('click', () => {
     idiomaAtual = idiomaAtual === 'pt' ? 'en' : 'pt';
     langBtn.textContent = idiomaAtual === 'pt' ? '🌐 English' : '🌐 Português';
 
     const tituloDestaques = document.querySelector('#destaques h2');
-    const tituloProjetos = document.querySelector('#projetos h2');
-    const descricaoProjetos = document.querySelector('#projetos p');
+    const tituloProjetos = document.querySelector('.main h2');
+    const descricaoProjetos = document.querySelector('.main p');
 
     if (tituloDestaques) tituloDestaques.textContent = idiomaAtual === 'pt' ? '✨ Destaques' : '✨ Highlights';
     if (tituloProjetos) tituloProjetos.textContent = idiomaAtual === 'pt' ? 'Projetos Power BI' : 'Power BI Projects';
@@ -97,7 +99,21 @@ document.addEventListener('DOMContentLoaded', () => {
         : 'See below the projects organized by complexity level.';
   });
 
+  // Exportar para PDF
+  pdfBtn?.addEventListener('click', () => {
+    const mainContent = document.querySelector('main');
+
+    const opt = {
+      margin:       0.5,
+      filename:     'portfolio-luis-silva.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().from(mainContent).set(opt).save();
+  });
+
   // Carregamento inicial
-  let idiomaAtual = 'pt';
   filtrar('todos');
 });
