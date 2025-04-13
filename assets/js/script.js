@@ -106,42 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
     filtrar(nivelAtual, buscaAtual);
   });
 
-  // Exportar PDF
-  pdfBtn?.addEventListener('click', () => {
-    // Mostra todos os projetos antes de capturar
-    document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
-    const todosBtn = document.querySelector('[data-nivel="todos"]');
-    todosBtn?.classList.add('active');
-  
-    filtrar('todos');
-  
-    setTimeout(() => {
-      const mainContent = document.querySelector('.main');
-  
-      const opt = {
-        margin: [40, 40, 40, 40], // Espaçamento (top, left, bottom, right)
-        filename: 'portfolio-luis-silva.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: {
-          scale: 2,
-          scrollY: 0,
-          useCORS: true
-        },
-        jsPDF: {
-          unit: 'pt',
-          format: 'a4',
-          orientation: 'portrait'
-        },
-        pagebreak: {
-          mode: ['css', 'avoid-all', 'legacy'],
-          before: '.page-break'
-        }
-      };
-  
-      html2pdf().set(opt).from(mainContent).save();
-    }, 600);
-  });    
-
   // Carregamento inicial
   filtrar('todos');
 });
