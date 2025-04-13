@@ -50,14 +50,15 @@ body.claro .card p {
   font-size: 1.6rem;
   font-weight: 800;
   margin: 0.5rem 0;
-  background: linear-gradient(90deg, #03a9f4, #ffd700);
+  background: linear-gradient(90deg, #03a9f4, #00e5ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .sidebar p {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: #90caf9;
+  font-weight: 500;
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -86,7 +87,7 @@ body.claro .card p {
 }
 
 .sidebar a:hover {
-  color: #ffd700;
+  color: #00e5ff;
 }
 
 .main {
