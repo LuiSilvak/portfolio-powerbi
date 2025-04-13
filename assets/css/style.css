@@ -86,6 +86,14 @@ body.claro .card p {
   height: 100vh;
 }
 
+.main h2 {
+  margin-bottom: 0.5rem;
+}
+
+.main h2 + p {
+  margin-bottom: 1.5rem; /* aumenta o espaçamento abaixo do parágrafo */
+}
+
 .tabs {
   display: flex;
   gap: 1rem;
