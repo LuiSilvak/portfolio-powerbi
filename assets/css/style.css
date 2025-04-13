@@ -237,3 +237,31 @@ html {
   scroll-behavior: smooth;
 }
 
+
+
+/* Extra Buttons */
+.extra-buttons {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.extra-buttons button,
+.extra-buttons a.download-btn {
+  background-color: #2b2b2b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.extra-buttons button:hover,
+.extra-buttons a.download-btn:hover {
+  background-color: #2196f3;
+}

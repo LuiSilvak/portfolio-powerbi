@@ -79,3 +79,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // Carregamento inicial
   filtrar('todos');
 });
+
+// Alternância de idioma
+const langBtn = document.getElementById("langToggleBtn");
+let idiomaAtual = "pt";
+
+langBtn.addEventListener("click", () => {
+  idiomaAtual = idiomaAtual === "pt" ? "en" : "pt";
+  langBtn.textContent = idiomaAtual === "pt" ? "🌐 English" : "🌐 Português";
+  const destaquesTitle = document.querySelector(".destaques h2");
+  if (destaquesTitle) {
+    destaquesTitle.textContent = idiomaAtual === "pt" ? "✨ Destaques" : "✨ Highlights";
+  }
+  const projetosSub = document.querySelector(".main h2 + p");
+  if (projetosSub) {
+    projetosSub.textContent = idiomaAtual === "pt"
+      ? "Confira abaixo os projetos organizados por nível de complexidade:"
+      : "See below the projects organized by level of complexity.";
+  }
+});
