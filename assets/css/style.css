@@ -233,8 +233,14 @@ body.claro #searchInput {
   margin-top: auto;
   margin-bottom: 0.5rem;
   color: #ffffff;
+  text-decoration: none;
   font-size: 0.9rem;
   font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.card a:hover {
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
 }
 
 .card p {
@@ -294,6 +300,11 @@ html {
 .card.destaque {
   border: 2px solid #ffd700;
   background-color: #292929;
+}
+
+body.claro .card a {
+  color: #000;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
 }
 
 body.claro .card.destaque {
