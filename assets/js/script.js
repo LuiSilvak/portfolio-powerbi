@@ -18,7 +18,7 @@ const traducoes = {
     contato: 'Contato',
     repositorios: 'Repositórios',
     cidade: 'São Luís – MA',
-    abrirModal: 'Ver Projeto'
+    linkExterno: 'Abrir no Power BI Online'
   },
   en: {
     tabs: {
@@ -35,9 +35,29 @@ const traducoes = {
     contato: 'Contact',
     repositorios: 'Repositories',
     cidade: 'São Luís – MA',
-    abrirModal: 'View Project'
+    linkExterno: 'Open in Power BI Online'
   }
 };
+
+function abrirModal(link) {
+  const modal = document.getElementById('powerbiModal');
+  const iframe = modal.querySelector('iframe');
+  const a = modal.querySelector('.powerbi-link');
+
+  iframe.src = link;
+  a.href = link;
+  a.textContent = traducoes[idiomaAtual].linkExterno;
+
+  modal.style.display = 'block';
+}
+
+function fecharModal() {
+  const modal = document.getElementById('powerbiModal');
+  const iframe = modal.querySelector('iframe');
+
+  iframe.src = '';
+  modal.style.display = 'none';
+}
 
 function renderCards(lista, containerSelector) {
   const container = document.querySelector(containerSelector);
@@ -45,7 +65,7 @@ function renderCards(lista, containerSelector) {
 
   container.innerHTML = '';
 
-  lista.forEach((projeto, index) => {
+  lista.forEach(projeto => {
     const card = document.createElement('div');
     const classes = `card check ${projeto.nivel}` + (projeto.destaque ? ' destaque' : '');
     card.className = classes.trim();
@@ -66,49 +86,18 @@ function renderCards(lista, containerSelector) {
     descricao.textContent = idiomaAtual === 'en' ? projeto.descricao_en || projeto.descricao : projeto.descricao;
 
     const botao = document.createElement('a');
+    botao.textContent = traducoes[idiomaAtual].projetoBtn;
     botao.href = '#';
-    botao.classList.add('ver-projeto');
-    botao.dataset.index = index;
-    botao.textContent = traducoes[idiomaAtual].abrirModal;
+    botao.addEventListener('click', (e) => {
+      e.preventDefault();
+      abrirModal(projeto.link);
+    });
 
     card.appendChild(titulo);
     card.appendChild(descricao);
     card.appendChild(botao);
 
     container.appendChild(card);
-  });
-
-  ativarModais();
-}
-
-function ativarModais() {
-  const botoes = document.querySelectorAll('.ver-projeto');
-  const modal = document.getElementById('modal');
-  const iframe = document.getElementById('modal-iframe');
-  const externalLink = document.getElementById('modal-external-link');
-  const closeBtn = document.querySelector('.close-modal');
-
-  botoes.forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const index = parseInt(btn.dataset.index);
-      const projeto = projetos[index];
-      iframe.src = projeto.link;
-      externalLink.href = projeto.link;
-      modal.style.display = 'block';
-    });
-  });
-
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    iframe.src = '';
-  });
-
-  window.addEventListener('click', e => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-      iframe.src = '';
-    }
   });
 }
 
@@ -130,6 +119,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   const modoBtn = document.getElementById('modoBtn');
   const langBtn = document.getElementById('langToggleBtn');
+  const fecharBtn = document.querySelector('.modal .close');
+
+  fecharBtn?.addEventListener('click', fecharModal);
+
+  window.addEventListener('click', (e) => {
+    if (e.target.id === 'powerbiModal') {
+      fecharModal();
+    }
+  });
 
   tabs.forEach(button => {
     button.addEventListener('click', () => {
