@@ -101,8 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Exportar PDF
   pdfBtn?.addEventListener('click', () => {
-    const element = document.body; // Captura o body completo
+    filtrar('todos'); // Garante que todos sejam renderizados antes
   
+    const element = document.body;
     const opt = {
       margin: 0,
       filename: 'portfolio-luis-silva.pdf',
@@ -116,8 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
       pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
     };
   
-    html2pdf().set(opt).from(element).save();
-  });
+    setTimeout(() => {
+      html2pdf().set(opt).from(element).save();
+    }, 300); // aguarda renderizar todos os cards antes da captura
+  });  
   
   // Carregamento inicial
   filtrar('todos');
