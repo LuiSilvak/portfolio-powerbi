@@ -232,11 +232,11 @@ body.claro #searchInput {
   align-self: center;
   margin-top: auto;
   margin-bottom: 0.5rem;
-  padding: 0.4rem 1rem;
+  padding: 0.3rem 0.8rem;
   background-color: #03a9f4; /* Azul claro */
   color: white;              /* Texto branco */
   text-decoration: none;     /* Remove sublinhado */
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   font-weight: bold;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(3, 169, 244, 0.5);
