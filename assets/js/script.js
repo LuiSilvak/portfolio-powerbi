@@ -101,26 +101,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Exportar PDF
   pdfBtn?.addEventListener('click', () => {
-    filtrar('todos'); // Garante que todos sejam renderizados antes
+    // Garante que todos os projetos estejam visíveis
+    document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
+    const todosBtn = document.querySelector('[data-nivel="todos"]');
+    todosBtn?.classList.add('active');
   
-    const element = document.body;
-    const opt = {
-      margin: 0,
-      filename: 'portfolio-luis-silva.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: {
-        scale: 2,
-        scrollY: 0,
-        useCORS: true
-      },
-      jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' },
-      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-    };
+    filtrar('todos'); // mostra todos os projetos
   
+    // Espera o DOM renderizar os cards antes de capturar
     setTimeout(() => {
+      const element = document.body;
+  
+      const opt = {
+        margin: 0,
+        filename: 'portfolio-luis-silva.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: {
+          scale: 2,
+          scrollY: 0,
+          useCORS: true
+        },
+        jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' },
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+      };
+  
       html2pdf().set(opt).from(element).save();
-    }, 300); // aguarda renderizar todos os cards antes da captura
-  });  
+    }, 300); // tempo para renderizar antes de capturar
+  });    
   
   // Carregamento inicial
   filtrar('todos');
