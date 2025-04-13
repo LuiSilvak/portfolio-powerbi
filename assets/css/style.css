@@ -344,3 +344,7 @@ body.claro .card.destaque p {
   color: #ffc107;
   margin-left: 1rem;
 }
+
+#destaques > h2 {
+  display: none;
+}
