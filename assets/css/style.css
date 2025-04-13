@@ -399,20 +399,8 @@ body.claro .card.destaque p {
 
 /* Impressão e exportação para PDF */
 @media print {
-  body {
-    background: white !important;
-    color: black !important;
-    font-size: 12px;
-    overflow: visible !important;
-  }
-
-  .sidebar {
-    display: none !important;
-  }
-
+  .sidebar,
   .top-right-buttons,
-  #modoBtn,
-  #langToggleBtn,
   .tab,
   #searchInput,
   .destaques-titulo {
@@ -420,53 +408,34 @@ body.claro .card.destaque p {
   }
 
   .main {
-    width: 100%;
+    width: 100% !important;
     height: auto !important;
-    padding: 1rem !important;
     overflow: visible !important;
   }
 
-  .card {
+  .container {
+    display: block !important;
+    height: auto !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .card,
+  .card-grid {
     page-break-inside: avoid;
     break-inside: avoid;
   }
 
-  .card a {
+  h2, p, .card h3, .card p {
+    color: black !important;
+  }
+
+  a {
     color: #000 !important;
     text-decoration: underline;
   }
-
-  .card.destaque {
-    border-color: #ffa500 !important;
-  }
-
-  .card h3,
-  .card p {
-    color: #000 !important;
-  }
-
-  .card-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
-    gap: 1rem;
-  }
-
-  .card-grid, .destaques-grid {
-    page-break-inside: avoid;
-  }
-
-  .main h2,
-  .main p {
-    color: black !important;
-  }
-
-  #destaques h2 {
-    display: block !important;
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-    color: black !important;
-  }
-
-  .download-btn {
-    display: none !important;
-  }
 }
+
