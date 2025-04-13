@@ -386,6 +386,7 @@ body.claro .card.destaque p {
 
   .main {
     padding: 1rem;
+    text-align: center;
   }
 
   .tabs {
@@ -394,8 +395,12 @@ body.claro .card.destaque p {
 
   .top-right-buttons {
     position: static;
+    display: flex;
     justify-content: center;
+    gap: 1rem;
     margin-top: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
   }
 
   .top-bar {
@@ -405,6 +410,8 @@ body.claro .card.destaque p {
 
   .destaques-titulo {
     margin-left: 0;
+    margin-top: 1rem;
+    justify-content: center;
   }
 
   #searchInput {
