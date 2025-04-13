@@ -376,17 +376,19 @@ body.claro .card.destaque p {
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+    height: auto;
   }
 
   .sidebar {
     width: 100%;
     height: auto;
-    padding: 1.5rem;
+    padding: 2rem;
   }
 
   .main {
     padding: 1rem;
     text-align: center;
+    height: auto;
   }
 
   .tabs {
