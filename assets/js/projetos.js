@@ -16,7 +16,8 @@ const projetos = [
     descricao: "Painel de gastos mensais com filtros dinâmicos.",
     descricao_en: "Monthly expense dashboard with dynamic filters.",
     imagem: "./assets/images/gastos-pessoais.jpg",
-    link: "#",
+    link: "https://app.powerbi.com/view?r=eyJrIjoiMjZlYmRkM2QtOWNjNy00NTliLTg0NGQtYThiMmZhYzYxMWMyIiwidCI6ImVjNmU0N2QyLWEwNGMtNGQ2Yy1iZjhmLWQ4ZWQyNzg1NzQ5YiJ9",
+    embed: "https://app.powerbi.com/view?r=eyJrIjoiMjZlYmRkM2QtOWNjNy00NTliLTg0NGQtYThiMmZhYzYxMWMyIiwidCI6ImVjNmU0N2QyLWEwNGMtNGQ2Yy1iZjhmLWQ4ZWQyNzg1NzQ5YiJ9",
     nivel: "iniciante"
   },
   {
@@ -25,7 +26,8 @@ const projetos = [
     descricao: "Análise por escola, série, disciplina e média geral.",
     descricao_en: "Analysis by school, grade, subject, and average score.",
     imagem: "./assets/images/alunos.jpg",
-    link: "#",
+    link: "https://app.powerbi.com/view?r=eyJrIjoiM2M0NjE5ZWEtODk0Yy00MDM3LThmODMtNzViNWUwNDA4ZmZmIiwidCI6ImVjNmU0N2QyLWEwNGMtNGQ2Yy1iZjhmLWQ4ZWQyNzg1NzQ5YiJ9",
+    embed: "https://app.powerbi.com/view?r=eyJrIjoiM2M0NjE5ZWEtODk0Yy00MDM3LThmODMtNzViNWUwNDA4ZmZmIiwidCI6ImVjNmU0N2QyLWEwNGMtNGQ2Yy1iZjhmLWQ4ZWQyNzg1NzQ5YiJ9",
     nivel: "iniciante"
   },
   {
@@ -34,7 +36,8 @@ const projetos = [
     descricao: "Acompanhamento de tickets por tipo e tempo de resposta.",
     descricao_en: "Monitoring of tickets by type and response time.",
     imagem: "./assets/images/suporte.jpg",
-    link: "#",
+    link: "https://app.powerbi.com/view?r=eyJrIjoiZWEzNGNlOWYtNmMzYS00YmJlLWE3MmUtZDkwNDllY2EyNDY3IiwidCI6ImVjNmU0N2QyLWEwNGMtNGQ2Yy1iZjhmLWQ4ZWQyNzg1NzQ5YiJ9",
+    embed: "https://app.powerbi.com/view?r=eyJrIjoiZWEzNGNlOWYtNmMzYS00YmJlLWE3MmUtZDkwNDllY2EyNDY3IiwidCI6ImVjNmU0N2QyLWEwNGMtNGQ2Yy1iZjhmLWQ4ZWQyNzg1NzQ5YiJ9",
     nivel: "iniciante"
   },
   {
@@ -43,7 +46,8 @@ const projetos = [
     descricao: "Indicadores de presença, nota e status de conclusão.",
     descricao_en: "Indicators of attendance, grade, and completion status.",
     imagem: "./assets/images/treinamentos.jpg",
-    link: "#",
+    link: "https://app.powerbi.com/view?r=eyJrIjoiYzEzMmNhOTQtZTVhNy00NDZhLWIyOTYtNzNjYTc1Mjk1ZjhkIiwidCI6ImVjNmU0N2QyLWEwNGMtNGQ2Yy1iZjhmLWQ4ZWQyNzg1NzQ5YiJ9",
+    embed: "https://app.powerbi.com/view?r=eyJrIjoiYzEzMmNhOTQtZTVhNy00NDZhLWIyOTYtNzNjYTc1Mjk1ZjhkIiwidCI6ImVjNmU0N2QyLWEwNGMtNGQ2Yy1iZjhmLWQ4ZWQyNzg1NzQ5YiJ9",
     nivel: "iniciante"
   },
   {
