@@ -40,14 +40,21 @@ const traducoes = {
 };
 
 // MODAL: ABRIR
-function abrirModal(link) {
+function abrirModal(link, titulo, descricao) {
   const modal = document.getElementById('powerbiModal');
   const iframe = modal.querySelector('iframe');
   const a = modal.querySelector('.powerbi-link');
+  const tituloEl = modal.querySelector('#modalTitulo');
+  const descricaoEl = modal.querySelector('#modalDescricao');
 
   iframe.src = link;
   a.href = link;
   a.textContent = traducoes[idiomaAtual].linkExterno;
+
+  if (tituloEl && descricaoEl) {
+    tituloEl.textContent = titulo;
+    descricaoEl.textContent = descricao;
+  }
 
   modal.style.display = 'block';
 }
@@ -56,7 +63,6 @@ function abrirModal(link) {
 function fecharModal() {
   const modal = document.getElementById('powerbiModal');
   const iframe = modal.querySelector('iframe');
-
   iframe.src = '';
   modal.style.display = 'none';
 }
@@ -93,7 +99,11 @@ function renderCards(lista, containerSelector) {
     botao.href = '#';
     botao.addEventListener('click', (e) => {
       e.preventDefault();
-      abrirModal(projeto.link);
+      abrirModal(
+        projeto.link,
+        idiomaAtual === 'en' ? projeto.titulo_en || projeto.titulo : projeto.titulo,
+        idiomaAtual === 'en' ? projeto.descricao_en || projeto.descricao : projeto.descricao
+      );
     });
 
     card.appendChild(titulo);
@@ -126,7 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const langBtn = document.getElementById('langToggleBtn');
   const fecharBtn = document.querySelector('.modal .close');
 
-  // Fechar modal
   fecharBtn?.addEventListener('click', fecharModal);
   window.addEventListener('click', (e) => {
     if (e.target.id === 'powerbiModal') {
@@ -134,7 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Tabs filtro
   tabs.forEach(button => {
     button.addEventListener('click', () => {
       tabs.forEach(btn => btn.classList.remove('active'));
@@ -145,34 +153,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Busca
   searchInput?.addEventListener('input', e => {
     const nivel = document.querySelector('.tab.active')?.dataset.nivel || 'todos';
     filtrar(nivel, e.target.value);
   });
 
-  // Modo claro/escuro
   modoBtn?.addEventListener('click', () => {
     document.body.classList.toggle('claro');
   });
 
-  // Alternância de idioma
   langBtn?.addEventListener('click', () => {
     idiomaAtual = idiomaAtual === 'pt' ? 'en' : 'pt';
     langBtn.textContent = idiomaAtual === 'pt' ? '🌐 English' : '🌐 Português';
 
-    // Tabs
     tabs.forEach(tab => {
       const key = tab.dataset.nivel;
       tab.innerHTML = traducoes[idiomaAtual].tabs[key];
     });
 
-    // Input
     if (searchInput) {
       searchInput.placeholder = traducoes[idiomaAtual].searchPlaceholder;
     }
 
-    // Cabeçalhos
     const tituloDestaques = document.querySelector('.destaques-titulo');
     if (tituloDestaques) tituloDestaques.textContent = traducoes[idiomaAtual].destaques;
 
@@ -181,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (tituloProjetos) tituloProjetos.textContent = traducoes[idiomaAtual].tituloPrincipal;
     if (descricaoProjetos) descricaoProjetos.textContent = traducoes[idiomaAtual].descricaoPrincipal;
 
-    // Sidebar
     document.querySelectorAll('.sidebar ul li').forEach(li => {
       if (li.textContent.includes('Contato') || li.textContent.includes('Contact')) {
         li.innerHTML = `<ion-icon name="mail-outline"></ion-icon>${traducoes[idiomaAtual].contato}`;
@@ -199,6 +200,5 @@ document.addEventListener('DOMContentLoaded', () => {
     filtrar(nivelAtual, buscaAtual);
   });
 
-  // Inicial
   filtrar('todos');
 });
