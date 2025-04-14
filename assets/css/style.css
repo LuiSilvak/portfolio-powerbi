@@ -339,6 +339,23 @@ body.claro .card.destaque p {
   border: none;
 }
 
+/* Estilização do título e descrição do modal */
+.modal-content h3#modalTitulo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.modal-content p#modalDescricao {
+  font-size: 1rem;
+  color: #cccccc;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 0 10px;
+}
+
 .modal .close {
   color: #aaa;
   float: right;
